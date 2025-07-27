@@ -1,0 +1,330 @@
+{
+  "salads": [
+    {
+      "id": 101,
+      "name": "Protein Power Sprouts Chaat Salad",
+      "category": "Salad",
+      "cuisine": "Indian",
+      "prep_time": 15,
+      "cook_time": 0,
+      "total_time": 15,
+      "servings": 1,
+      "difficulty": "Easy",
+      "calories": 271,
+      "protein": 15.2,
+      "carbs": 26.1,
+      "fat": 9.3,
+      "fiber": 11.3,
+      "ingredients": [
+        {
+          "name": "Mixed sprouts (moong, kala chana)",
+          "quantity": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "Paneer cubes",
+          "quantity": 50,
+          "unit": "g"
+        },
+        {
+          "name": "Cucumber diced",
+          "quantity": 0.5,
+          "unit": "cup"
+        },
+        {
+          "name": "Tomatoes diced",
+          "quantity": 0.5,
+          "unit": "cup"
+        },
+        {
+          "name": "Onion chopped",
+          "quantity": 2,
+          "unit": "tbsp"
+        },
+        {
+          "name": "Carrots grated",
+          "quantity": 0.25,
+          "unit": "cup"
+        },
+        {
+          "name": "Coriander leaves",
+          "quantity": 2,
+          "unit": "tbsp"
+        },
+        {
+          "name": "Mint leaves",
+          "quantity": 1,
+          "unit": "tbsp"
+        }
+      ],
+      "instructions": [
+        "Wash and drain the mixed sprouts",
+        "Dice all vegetables into small pieces",
+        "Mix sprouts, paneer, and vegetables in a large bowl",
+        "Choose your preferred dressing and add to taste",
+        "Garnish with fresh herbs and serve immediately"
+      ],
+      "dressings": [
+        {
+          "name": "Mint-Coriander Chutney Dressing",
+          "ingredients": [
+            "Fresh mint - 1/4 cup",
+            "Coriander - 1/4 cup",
+            "Green chillies - 2",
+            "Ginger - 1 inch",
+            "Lemon juice - 2 tbsp",
+            "Olive oil - 1 tbsp",
+            "Salt to taste"
+          ],
+          "method": "Blend all ingredients until smooth. This tangy green dressing is packed with vitamins and adds a fresh kick to any salad."
+        },
+        {
+          "name": "Yogurt-Chaat Masala Dressing",
+          "ingredients": [
+            "Hung curd - 3 tbsp",
+            "Chaat masala - 1 tsp",
+            "Black salt - 1/2 tsp",
+            "Cumin powder - 1/2 tsp",
+            "Lemon juice - 1 tbsp"
+          ],
+          "method": "Whisk all ingredients until smooth. This creamy dressing provides probiotics and authentic Indian flavors."
+        },
+        {
+          "name": "Tamarind-Jaggery Dressing",
+          "ingredients": [
+            "Tamarind paste - 1 tbsp",
+            "Jaggery - 1 tsp",
+            "Red chilli powder - 1/4 tsp",
+            "Cumin powder - 1/2 tsp",
+            "Salt to taste",
+            "Water - 2 tbsp"
+          ],
+          "method": "Mix all ingredients and strain. This sweet-tangy dressing is inspired by traditional Indian chutneys."
+        }
+      ],
+      "tags": [
+        "high-protein",
+        "high-fiber",
+        "vegetarian",
+        "sprouts",
+        "salad"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true
+    },
+    {
+      "id": 102,
+      "name": "Paneer Tikka Garden Salad",
+      "category": "Salad",
+      "cuisine": "Indian",
+      "prep_time": 20,
+      "cook_time": 10,
+      "total_time": 30,
+      "servings": 1,
+      "difficulty": "Medium",
+      "calories": 320,
+      "protein": 18.5,
+      "carbs": 12.8,
+      "fat": 22.4,
+      "fiber": 8.2,
+      "ingredients": [
+        {
+          "name": "Paneer cubes",
+          "quantity": 150,
+          "unit": "g"
+        },
+        {
+          "name": "Mixed greens (lettuce, spinach)",
+          "quantity": 2,
+          "unit": "cups"
+        },
+        {
+          "name": "Cherry tomatoes",
+          "quantity": 8,
+          "unit": "pieces"
+        },
+        {
+          "name": "Cucumber sliced",
+          "quantity": 1,
+          "unit": "medium"
+        },
+        {
+          "name": "Bell peppers",
+          "quantity": 0.5,
+          "unit": "cup"
+        },
+        {
+          "name": "Red onion rings",
+          "quantity": 0.25,
+          "unit": "cup"
+        },
+        {
+          "name": "Tandoori masala",
+          "quantity": 1,
+          "unit": "tsp"
+        },
+        {
+          "name": "Roasted peanuts",
+          "quantity": 2,
+          "unit": "tbsp"
+        }
+      ],
+      "instructions": [
+        "Marinate paneer cubes with tandoori masala for 15 minutes",
+        "Grill or pan-fry paneer until golden brown",
+        "Arrange mixed greens on a plate",
+        "Top with grilled paneer, vegetables, and peanuts",
+        "Drizzle with chosen dressing and serve"
+      ],
+      "dressings": [
+        {
+          "name": "Spiced Lime-Olive Oil Dressing",
+          "ingredients": [
+            "Extra virgin olive oil - 2 tbsp",
+            "Fresh lime juice - 2 tbsp",
+            "Ginger-garlic paste - 1/2 tsp",
+            "Red chilli flakes - 1/4 tsp",
+            "Honey - 1/2 tsp",
+            "Salt and pepper to taste"
+          ],
+          "method": "Whisk all ingredients vigorously. This Mediterranean-Indian fusion dressing provides healthy fats and zesty flavors."
+        },
+        {
+          "name": "Mustard Seed Tempering Dressing",
+          "ingredients": [
+            "Mustard oil - 1 tbsp",
+            "Mustard seeds - 1/2 tsp",
+            "Curry leaves - 4-5",
+            "Hing (asafoetida) - pinch",
+            "Lemon juice - 1 tbsp",
+            "Salt to taste"
+          ],
+          "method": "Heat oil, add mustard seeds and curry leaves. Once they splutter, cool and add lemon juice. Traditional South Indian tempering adds unique flavors."
+        },
+        {
+          "name": "Cashew-Herb Cream Dressing",
+          "ingredients": [
+            "Soaked cashews - 2 tbsp",
+            "Fresh basil - 1 tbsp",
+            "Garlic - 1 clove",
+            "Lemon juice - 1 tbsp",
+            "Water - 2-3 tbsp",
+            "Salt and pepper to taste"
+          ],
+          "method": "Blend soaked cashews with herbs and seasonings until creamy. This rich, protein-packed dressing is dairy-free and nutritious."
+        }
+      ],
+      "tags": [
+        "high-protein",
+        "grilled",
+        "vegetarian",
+        "paneer",
+        "salad"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true
+    },
+    {
+      "id": 103,
+      "name": "Quinoa Rajma Power Bowl",
+      "category": "Salad",
+      "cuisine": "Indo-Western",
+      "prep_time": 25,
+      "cook_time": 15,
+      "total_time": 40,
+      "servings": 1,
+      "difficulty": "Medium",
+      "calories": 380,
+      "protein": 16.8,
+      "carbs": 48.2,
+      "fat": 12.5,
+      "fiber": 14.6,
+      "ingredients": [
+        {
+          "name": "Cooked quinoa",
+          "quantity": 0.5,
+          "unit": "cup"
+        },
+        {
+          "name": "Boiled rajma (kidney beans)",
+          "quantity": 0.5,
+          "unit": "cup"
+        },
+        {
+          "name": "Mixed vegetables (carrot, beans, corn)",
+          "quantity": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "Avocado sliced",
+          "quantity": 0.25,
+          "unit": "medium"
+        },
+        {
+          "name": "Pumpkin seeds",
+          "quantity": 1,
+          "unit": "tbsp"
+        },
+        {
+          "name": "Fresh herbs (cilantro, mint)",
+          "quantity": 0.25,
+          "unit": "cup"
+        }
+      ],
+      "instructions": [
+        "Cook quinoa and let it cool completely",
+        "Steam mixed vegetables until tender-crisp",
+        "Combine quinoa, rajma, and vegetables",
+        "Top with avocado slices and pumpkin seeds",
+        "Add fresh herbs and preferred dressing"
+      ],
+      "dressings": [
+        {
+          "name": "Garam Masala Vinaigrette",
+          "ingredients": [
+            "Apple cider vinegar - 2 tbsp",
+            "Olive oil - 2 tbsp",
+            "Garam masala - 1/2 tsp",
+            "Dijon mustard - 1/2 tsp",
+            "Honey - 1 tsp",
+            "Salt to taste"
+          ],
+          "method": "Whisk all ingredients until emulsified. This aromatic dressing combines Western techniques with Indian spices."
+        },
+        {
+          "name": "Coconut-Curry Leaf Dressing",
+          "ingredients": [
+            "Fresh coconut grated - 2 tbsp",
+            "Curry leaves - 6-8",
+            "Green chillies - 1",
+            "Ginger - 1/2 inch",
+            "Lemon juice - 2 tbsp",
+            "Salt to taste"
+          ],
+          "method": "Grind coconut with aromatics, add lemon juice. This South Indian inspired dressing adds tropical flavors and healthy fats."
+        },
+        {
+          "name": "Date-Sesame Dressing",
+          "ingredients": [
+            "Pitted dates - 3",
+            "Sesame oil - 1 tbsp",
+            "Rice vinegar - 1 tbsp",
+            "Ginger juice - 1/2 tsp",
+            "Water - 2 tbsp"
+          ],
+          "method": "Blend dates with liquids until smooth. This naturally sweet dressing provides antioxidants and essential minerals."
+        }
+      ],
+      "tags": [
+        "high-protein",
+        "high-fiber",
+        "quinoa",
+        "rajma",
+        "superfood",
+        "salad"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true
+    }
+  ]
+}
