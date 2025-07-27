@@ -1,0 +1,765 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Paneer Bhurji",
+      "category": "Breakfast",
+      "cuisine": "Indian",
+      "prep_time": 15,
+      "cook_time": 10,
+      "total_time": 25,
+      "servings": 2,
+      "difficulty": "Easy",
+      "calories": 280,
+      "protein": 18,
+      "carbs": 8,
+      "fat": 20,
+      "fiber": 3,
+      "ingredients": [
+        {
+          "name": "Paneer",
+          "quantity": 200,
+          "unit": "g"
+        },
+        {
+          "name": "Onion",
+          "quantity": 1,
+          "unit": "medium"
+        },
+        {
+          "name": "Tomato",
+          "quantity": 1,
+          "unit": "medium"
+        },
+        {
+          "name": "Green chillies",
+          "quantity": 2,
+          "unit": "pieces"
+        },
+        {
+          "name": "Turmeric powder",
+          "quantity": 0.5,
+          "unit": "tsp"
+        },
+        {
+          "name": "Cumin seeds",
+          "quantity": 1,
+          "unit": "tsp"
+        },
+        {
+          "name": "Oil",
+          "quantity": 1,
+          "unit": "tbsp"
+        },
+        {
+          "name": "Salt",
+          "quantity": 1,
+          "unit": "tsp"
+        },
+        {
+          "name": "Coriander leaves",
+          "quantity": 2,
+          "unit": "tbsp"
+        }
+      ],
+      "instructions": [
+        "Heat oil in a pan, add cumin seeds",
+        "Add chopped onions and green chillies, saut\u00e9 until golden",
+        "Add tomatoes and cook until soft",
+        "Add turmeric and salt, mix well",
+        "Crumble paneer and add to the pan",
+        "Cook for 3-4 minutes, garnish with coriander"
+      ],
+      "tags": [
+        "high-protein",
+        "low-carb",
+        "vegetarian",
+        "quick",
+        "breakfast"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true
+    },
+    {
+      "id": 2,
+      "name": "Tandoori Chicken",
+      "category": "Dinner",
+      "cuisine": "Indian",
+      "prep_time": 120,
+      "cook_time": 25,
+      "total_time": 145,
+      "servings": 4,
+      "difficulty": "Medium",
+      "calories": 225,
+      "protein": 52,
+      "carbs": 2,
+      "fat": 5,
+      "fiber": 0,
+      "ingredients": [
+        {
+          "name": "Chicken breast",
+          "quantity": 500,
+          "unit": "g"
+        },
+        {
+          "name": "Yogurt",
+          "quantity": 50,
+          "unit": "g"
+        },
+        {
+          "name": "Ginger garlic paste",
+          "quantity": 10,
+          "unit": "g"
+        },
+        {
+          "name": "Ghee",
+          "quantity": 1,
+          "unit": "tbsp"
+        },
+        {
+          "name": "Salt",
+          "quantity": 1,
+          "unit": "tsp"
+        },
+        {
+          "name": "Red chilli powder",
+          "quantity": 1,
+          "unit": "tsp"
+        },
+        {
+          "name": "Tandoori masala",
+          "quantity": 1,
+          "unit": "tsp"
+        },
+        {
+          "name": "Kasuri methi",
+          "quantity": 0.5,
+          "unit": "tsp"
+        },
+        {
+          "name": "Lime juice",
+          "quantity": 0.5,
+          "unit": "piece"
+        }
+      ],
+      "instructions": [
+        "Cut chicken breast into pieces",
+        "Marinate with yogurt, ginger-garlic paste, spices and lime juice for 2 hours",
+        "Heat ghee in a pan",
+        "Cook marinated chicken on medium heat for 20-25 minutes",
+        "Turn occasionally until cooked through",
+        "Garnish with kasuri methi and serve hot"
+      ],
+      "tags": [
+        "high-protein",
+        "low-carb",
+        "non-vegetarian",
+        "dinner",
+        "keto-friendly"
+      ],
+      "dietary_type": "Non-Vegetarian",
+      "available_in_pune": true
+    },
+    {
+      "id": 3,
+      "name": "Egg Curry",
+      "category": "Lunch",
+      "cuisine": "Indian",
+      "prep_time": 10,
+      "cook_time": 20,
+      "total_time": 30,
+      "servings": 3,
+      "difficulty": "Easy",
+      "calories": 250,
+      "protein": 18,
+      "carbs": 8,
+      "fat": 15,
+      "fiber": 2,
+      "ingredients": [
+        {
+          "name": "Eggs",
+          "quantity": 6,
+          "unit": "pieces"
+        },
+        {
+          "name": "Onion",
+          "quantity": 2,
+          "unit": "medium"
+        },
+        {
+          "name": "Tomato",
+          "quantity": 2,
+          "unit": "medium"
+        },
+        {
+          "name": "Ginger garlic paste",
+          "quantity": 1,
+          "unit": "tbsp"
+        },
+        {
+          "name": "Coconut milk",
+          "quantity": 200,
+          "unit": "ml"
+        },
+        {
+          "name": "Turmeric powder",
+          "quantity": 0.5,
+          "unit": "tsp"
+        },
+        {
+          "name": "Red chilli powder",
+          "quantity": 1,
+          "unit": "tsp"
+        },
+        {
+          "name": "Cumin powder",
+          "quantity": 1,
+          "unit": "tsp"
+        },
+        {
+          "name": "Oil",
+          "quantity": 2,
+          "unit": "tbsp"
+        },
+        {
+          "name": "Salt",
+          "quantity": 1,
+          "unit": "tsp"
+        }
+      ],
+      "instructions": [
+        "Boil eggs for 8 minutes, peel and set aside",
+        "Heat oil, add onions and saut\u00e9 until golden",
+        "Add ginger-garlic paste, cook for 2 minutes",
+        "Add tomatoes and cook until soft",
+        "Add spices and cook for 2 minutes",
+        "Add coconut milk and bring to boil",
+        "Add boiled eggs and simmer for 5 minutes"
+      ],
+      "tags": [
+        "high-protein",
+        "low-carb",
+        "non-vegetarian",
+        "lunch",
+        "curry"
+      ],
+      "dietary_type": "Non-Vegetarian",
+      "available_in_pune": true
+    },
+    {
+      "id": 4,
+      "name": "Palak Paneer",
+      "category": "Dinner",
+      "cuisine": "Indian",
+      "prep_time": 15,
+      "cook_time": 20,
+      "total_time": 35,
+      "servings": 4,
+      "difficulty": "Medium",
+      "calories": 210,
+      "protein": 15,
+      "carbs": 12,
+      "fat": 12,
+      "fiber": 4,
+      "ingredients": [
+        {
+          "name": "Paneer",
+          "quantity": 250,
+          "unit": "g"
+        },
+        {
+          "name": "Spinach",
+          "quantity": 500,
+          "unit": "g"
+        },
+        {
+          "name": "Onion",
+          "quantity": 1,
+          "unit": "medium"
+        },
+        {
+          "name": "Tomato",
+          "quantity": 1,
+          "unit": "medium"
+        },
+        {
+          "name": "Ginger garlic paste",
+          "quantity": 1,
+          "unit": "tbsp"
+        },
+        {
+          "name": "Green chillies",
+          "quantity": 2,
+          "unit": "pieces"
+        },
+        {
+          "name": "Cumin seeds",
+          "quantity": 1,
+          "unit": "tsp"
+        },
+        {
+          "name": "Garam masala",
+          "quantity": 1,
+          "unit": "tsp"
+        },
+        {
+          "name": "Oil",
+          "quantity": 2,
+          "unit": "tbsp"
+        },
+        {
+          "name": "Salt",
+          "quantity": 1,
+          "unit": "tsp"
+        }
+      ],
+      "instructions": [
+        "Blanch spinach in boiling water for 2 minutes",
+        "Make a smooth puree of blanched spinach",
+        "Heat oil, add cumin seeds",
+        "Add onions, cook until golden",
+        "Add ginger-garlic paste and green chillies",
+        "Add tomatoes and cook until soft",
+        "Add spinach puree and bring to boil",
+        "Add paneer cubes and garam masala",
+        "Simmer for 5 minutes and serve"
+      ],
+      "tags": [
+        "high-protein",
+        "low-carb",
+        "vegetarian",
+        "dinner",
+        "iron-rich"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true
+    },
+    {
+      "id": 5,
+      "name": "Cauliflower Rice Pulao",
+      "category": "Lunch",
+      "cuisine": "Indian",
+      "prep_time": 10,
+      "cook_time": 15,
+      "total_time": 25,
+      "servings": 4,
+      "difficulty": "Easy",
+      "calories": 120,
+      "protein": 6,
+      "carbs": 8,
+      "fat": 8,
+      "fiber": 4,
+      "ingredients": [
+        {
+          "name": "Cauliflower",
+          "quantity": 1,
+          "unit": "medium head"
+        },
+        {
+          "name": "Green peas",
+          "quantity": 100,
+          "unit": "g"
+        },
+        {
+          "name": "Carrot",
+          "quantity": 1,
+          "unit": "medium"
+        },
+        {
+          "name": "Onion",
+          "quantity": 1,
+          "unit": "medium"
+        },
+        {
+          "name": "Cumin seeds",
+          "quantity": 1,
+          "unit": "tsp"
+        },
+        {
+          "name": "Bay leaves",
+          "quantity": 2,
+          "unit": "pieces"
+        },
+        {
+          "name": "Turmeric powder",
+          "quantity": 0.5,
+          "unit": "tsp"
+        },
+        {
+          "name": "Ghee",
+          "quantity": 2,
+          "unit": "tbsp"
+        },
+        {
+          "name": "Salt",
+          "quantity": 1,
+          "unit": "tsp"
+        },
+        {
+          "name": "Coriander leaves",
+          "quantity": 2,
+          "unit": "tbsp"
+        }
+      ],
+      "instructions": [
+        "Grate cauliflower to make rice-like texture",
+        "Heat ghee, add cumin seeds and bay leaves",
+        "Add chopped onions, cook until golden",
+        "Add carrots and peas, cook for 3 minutes",
+        "Add cauliflower rice and turmeric",
+        "Cook covered for 8-10 minutes",
+        "Garnish with coriander and serve"
+      ],
+      "tags": [
+        "low-carb",
+        "vegetarian",
+        "lunch",
+        "rice-substitute",
+        "fiber-rich"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true
+    },
+    {
+      "id": 6,
+      "name": "Grilled Paneer Tikka",
+      "category": "Snack",
+      "cuisine": "Indian",
+      "prep_time": 30,
+      "cook_time": 15,
+      "total_time": 45,
+      "servings": 4,
+      "difficulty": "Medium",
+      "calories": 190,
+      "protein": 14,
+      "carbs": 6,
+      "fat": 12,
+      "fiber": 2,
+      "ingredients": [
+        {
+          "name": "Paneer",
+          "quantity": 300,
+          "unit": "g"
+        },
+        {
+          "name": "Bell peppers",
+          "quantity": 2,
+          "unit": "pieces"
+        },
+        {
+          "name": "Onion",
+          "quantity": 1,
+          "unit": "large"
+        },
+        {
+          "name": "Yogurt",
+          "quantity": 100,
+          "unit": "g"
+        },
+        {
+          "name": "Ginger garlic paste",
+          "quantity": 1,
+          "unit": "tbsp"
+        },
+        {
+          "name": "Red chilli powder",
+          "quantity": 1,
+          "unit": "tsp"
+        },
+        {
+          "name": "Turmeric powder",
+          "quantity": 0.5,
+          "unit": "tsp"
+        },
+        {
+          "name": "Garam masala",
+          "quantity": 1,
+          "unit": "tsp"
+        },
+        {
+          "name": "Oil",
+          "quantity": 1,
+          "unit": "tbsp"
+        },
+        {
+          "name": "Salt",
+          "quantity": 1,
+          "unit": "tsp"
+        }
+      ],
+      "instructions": [
+        "Cut paneer, bell peppers, and onion into cubes",
+        "Mix yogurt with all spices and oil",
+        "Marinate paneer and vegetables for 30 minutes",
+        "Thread onto skewers alternately",
+        "Grill or pan-fry for 12-15 minutes",
+        "Turn occasionally until golden brown",
+        "Serve hot with mint chutney"
+      ],
+      "tags": [
+        "high-protein",
+        "low-carb",
+        "vegetarian",
+        "snack",
+        "grilled"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true
+    }
+  ],
+  "pune_ingredients": [
+    {
+      "name": "Paneer",
+      "available": true,
+      "source": "Market Yard, BigBasket",
+      "price_range": "300-400 per kg"
+    },
+    {
+      "name": "Chicken",
+      "available": true,
+      "source": "Market Yard, BigBasket",
+      "price_range": "200-300 per kg"
+    },
+    {
+      "name": "Eggs",
+      "available": true,
+      "source": "Market Yard, BigBasket",
+      "price_range": "5-7 per piece"
+    },
+    {
+      "name": "Spinach",
+      "available": true,
+      "source": "Market Yard, Local vendors",
+      "price_range": "20-30 per bunch"
+    },
+    {
+      "name": "Cauliflower",
+      "available": true,
+      "source": "Market Yard, BigBasket",
+      "price_range": "30-50 per kg"
+    },
+    {
+      "name": "Bell peppers",
+      "available": true,
+      "source": "Market Yard, BigBasket",
+      "price_range": "80-120 per kg"
+    },
+    {
+      "name": "Tomato",
+      "available": true,
+      "source": "Market Yard, BigBasket",
+      "price_range": "20-40 per kg"
+    },
+    {
+      "name": "Onion",
+      "available": true,
+      "source": "Market Yard, BigBasket",
+      "price_range": "25-35 per kg"
+    },
+    {
+      "name": "Green peas",
+      "available": true,
+      "source": "Market Yard, BigBasket",
+      "price_range": "60-80 per kg"
+    },
+    {
+      "name": "Yogurt",
+      "available": true,
+      "source": "BigBasket, Local dairy",
+      "price_range": "50-70 per 500g"
+    },
+    {
+      "name": "Coconut milk",
+      "available": true,
+      "source": "BigBasket, Grocery stores",
+      "price_range": "40-60 per 200ml"
+    },
+    {
+      "name": "Spices",
+      "available": true,
+      "source": "Market Yard, BigBasket",
+      "price_range": "20-100 per pack"
+    }
+  ],
+  "user_preferences": {
+    "dietary_types": [
+      "Vegetarian",
+      "Non-Vegetarian",
+      "Mixed"
+    ],
+    "calorie_goals": [
+      1200,
+      1400,
+      1600,
+      1700,
+      1800,
+      2000,
+      2200
+    ],
+    "protein_levels": [
+      "Standard",
+      "High-Protein",
+      "Very High-Protein"
+    ],
+    "carb_levels": [
+      "Very Low-Carb",
+      "Low-Carb",
+      "Moderate-Carb"
+    ],
+    "excluded_ingredients": [
+      "Dairy",
+      "Eggs",
+      "Nuts",
+      "Spicy food",
+      "Garlic",
+      "Onion"
+    ],
+    "meal_count": [
+      2,
+      3
+    ],
+    "cuisines": [
+      "North Indian",
+      "South Indian",
+      "Maharashtrian",
+      "Mixed Indian"
+    ]
+  },
+  "nutrition_database": [
+    {
+      "ingredient": "Paneer",
+      "calories_per_100g": 265,
+      "protein": 18,
+      "carbs": 3.4,
+      "fat": 20,
+      "fiber": 0
+    },
+    {
+      "ingredient": "Chicken breast",
+      "calories_per_100g": 165,
+      "protein": 31,
+      "carbs": 0,
+      "fat": 3.6,
+      "fiber": 0
+    },
+    {
+      "ingredient": "Eggs",
+      "calories_per_100g": 155,
+      "protein": 13,
+      "carbs": 1.1,
+      "fat": 11,
+      "fiber": 0
+    },
+    {
+      "ingredient": "Spinach",
+      "calories_per_100g": 23,
+      "protein": 2.9,
+      "carbs": 3.6,
+      "fat": 0.4,
+      "fiber": 2.2
+    },
+    {
+      "ingredient": "Cauliflower",
+      "calories_per_100g": 25,
+      "protein": 1.9,
+      "carbs": 5,
+      "fat": 0.3,
+      "fiber": 2
+    },
+    {
+      "ingredient": "Bell peppers",
+      "calories_per_100g": 31,
+      "protein": 1,
+      "carbs": 7,
+      "fat": 0.3,
+      "fiber": 2.5
+    },
+    {
+      "ingredient": "Tomato",
+      "calories_per_100g": 18,
+      "protein": 0.9,
+      "carbs": 3.9,
+      "fat": 0.2,
+      "fiber": 1.2
+    },
+    {
+      "ingredient": "Onion",
+      "calories_per_100g": 40,
+      "protein": 1.1,
+      "carbs": 9.3,
+      "fat": 0.1,
+      "fiber": 1.7
+    },
+    {
+      "ingredient": "Green peas",
+      "calories_per_100g": 81,
+      "protein": 5.4,
+      "carbs": 14.5,
+      "fat": 0.4,
+      "fiber": 5.7
+    },
+    {
+      "ingredient": "Yogurt",
+      "calories_per_100g": 59,
+      "protein": 10,
+      "carbs": 3.6,
+      "fat": 0.4,
+      "fiber": 0
+    }
+  ],
+  "api_recommendations": {
+    "nutrition_apis": [
+      {
+        "name": "Edamam",
+        "description": "900k+ foods, 150+ nutrients",
+        "pricing": "$29-299/month"
+      },
+      {
+        "name": "USDA FoodData Central",
+        "description": "300k+ foods, free government data",
+        "pricing": "Free"
+      },
+      {
+        "name": "Spoonacular",
+        "description": "2600+ ingredients, recipe search",
+        "pricing": "Free tier available"
+      },
+      {
+        "name": "FatSecret",
+        "description": "1.9M+ foods, commercial use permitted",
+        "pricing": "Free"
+      },
+      {
+        "name": "Indian Nutrient Databank",
+        "description": "1014 Indian recipes, open-access",
+        "pricing": "Free"
+      }
+    ],
+    "no_code_platforms": [
+      {
+        "name": "Softr",
+        "rating": 4.8,
+        "pricing": "$29/month",
+        "best_for": "Beginners"
+      },
+      {
+        "name": "Bubble",
+        "rating": 4.5,
+        "pricing": "$25/month",
+        "best_for": "Complex apps"
+      },
+      {
+        "name": "Glide",
+        "rating": 4.6,
+        "pricing": "Free tier",
+        "best_for": "Simple apps"
+      },
+      {
+        "name": "WeWeb",
+        "rating": 4.7,
+        "pricing": "Custom",
+        "best_for": "Scalable apps"
+      }
+    ]
+  }
+}

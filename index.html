@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthyMealBot - Pune's Smart Meal Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container flex justify-between items-center">
+            <div class="logo">
+                <h1>🥗 HealthyMealBot</h1>
+                <span class="subtitle">By Varun Nagpal</span>
+            </div>
+            <nav class="nav">
+                <button class="nav-btn active" data-tab="home">Today</button>
+                <button class="nav-btn" data-tab="shopping">Shopping</button>
+                <button class="nav-btn" data-tab="settings">Settings</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Onboarding Section -->
+            <section id="onboarding" class="onboarding">
+                <div class="onboarding-card card">
+                    <div class="card__body">
+                        <h2>Welcome to HealthyMealBot!</h2>
+                        <p>Let's personalize your meal plan for Pune's local ingredients</p>
+                        
+                        <form id="registration-form" class="registration-form">
+                            <div class="form-group">
+                                <label class="form-label" for="userName">Your Name</label>
+                                <input type="text" id="userName" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="location">Location</label>
+                                <input type="text" id="location" class="form-control" value="Pune" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="calorieGoal">Daily Calorie Goal</label>
+                                <select id="calorieGoal" class="form-control">
+                                    <option value="1200">1200 kcal</option>
+                                    <option value="1400">1400 kcal</option>
+                                    <option value="1600" selected>1600 kcal</option>
+                                    <option value="1700">1700 kcal</option>
+                                    <option value="1800">1800 kcal</option>
+                                    <option value="2000">2000 kcal</option>
+                                    <option value="2200">2200 kcal</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Dietary Type</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="dietaryType" value="Vegetarian" checked>
+                                        <span>Vegetarian</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="dietaryType" value="Non-Vegetarian">
+                                        <span>Non-Vegetarian</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="dietaryType" value="Mixed">
+                                        <span>Mixed</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="proteinLevel">Protein Preference</label>
+                                <select id="proteinLevel" class="form-control">
+                                    <option value="Standard">Standard</option>
+                                    <option value="High-Protein" selected>High-Protein</option>
+                                    <option value="Very High-Protein">Very High-Protein</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="carbLevel">Carb Preference</label>
+                                <select id="carbLevel" class="form-control">
+                                    <option value="Very Low-Carb">Very Low-Carb</option>
+                                    <option value="Low-Carb" selected>Low-Carb</option>
+                                    <option value="Moderate-Carb">Moderate-Carb</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Number of Recipes per Day</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="mealCount" value="2">
+                                        <span>2 Meals</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="mealCount" value="3" checked>
+                                        <span>3 Meals</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Exclude Ingredients (Allergies/Dislikes)</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="excludeIngredients" value="Dairy">
+                                        <span>Dairy</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="excludeIngredients" value="Eggs">
+                                        <span>Eggs</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="excludeIngredients" value="Nuts">
+                                        <span>Nuts</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="excludeIngredients" value="Spicy food">
+                                        <span>Spicy Food</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="excludeIngredients" value="Garlic">
+                                        <span>Garlic</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="excludeIngredients" value="Onion">
+                                        <span>Onion</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn--primary btn--full-width">Create My Meal Plan</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Home Tab Content -->
+            <section id="home-tab" class="tab-content hidden">
+                <div class="daily-header">
+                    <h2>Your Healthy Meal Plan</h2>
+                    <p id="current-date"></p>
+                    <p class="location-info">📍 Pune • All ingredients available at Market Yard & BigBasket</p>
+                </div>
+
+                <!-- Daily Summary -->
+                <div class="nutrition-summary card">
+                    <div class="card__body">
+                        <h3>Today's Nutrition Summary</h3>
+                        <div class="nutrition-grid">
+                            <div class="nutrition-item">
+                                <span class="nutrition-label">Calories</span>
+                                <div class="nutrition-bar">
+                                    <div class="nutrition-progress" id="calories-progress"></div>
+                                </div>
+                                <span class="nutrition-value" id="calories-value">0 / 1600 kcal</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span class="nutrition-label">Protein</span>
+                                <div class="nutrition-bar">
+                                    <div class="nutrition-progress" id="protein-progress"></div>
+                                </div>
+                                <span class="nutrition-value" id="protein-value">0g</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span class="nutrition-label">Carbs</span>
+                                <div class="nutrition-bar">
+                                    <div class="nutrition-progress" id="carbs-progress"></div>
+                                </div>
+                                <span class="nutrition-value" id="carbs-value">0g</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span class="nutrition-label">Fat</span>
+                                <div class="nutrition-bar">
+                                    <div class="nutrition-progress" id="fat-progress"></div>
+                                </div>
+                                <span class="nutrition-value" id="fat-value">0g</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Meal Cards -->
+                <div class="meals-container" id="meals-container">
+                    <!-- Meal cards will be dynamically generated here -->
+                </div>
+            </section>
+
+            <!-- Shopping List Tab -->
+            <section id="shopping-tab" class="tab-content hidden">
+                <div class="shopping-header">
+                    <h2>Shopping List</h2>
+                    <p>All ingredients available in Pune</p>
+                </div>
+                
+                <div class="shopping-list card">
+                    <div class="card__body">
+                        <div class="shopping-controls">
+                            <button class="btn btn--secondary btn--sm" id="clear-checked">Clear Checked</button>
+                            <button class="btn btn--secondary btn--sm" id="check-all">Check All</button>
+                        </div>
+                        <div id="shopping-items">
+                            <!-- Shopping items will be generated here -->
+                        </div>
+                        <div class="shopping-sources">
+                            <h4>Available at:</h4>
+                            <div class="sources-list">
+                                <span class="source-tag">🏪 Market Yard</span>
+                                <span class="source-tag">🛒 BigBasket</span>
+                                <span class="source-tag">📦 Amazon Fresh</span>
+                                <span class="source-tag">🏪 Local Vendors</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Tab -->
+            <section id="settings-tab" class="tab-content hidden">
+                <div class="settings-header">
+                    <h2>Settings</h2>
+                    <p>Update your meal preferences</p>
+                </div>
+                
+                <div class="settings-form card">
+                    <div class="card__body">
+                        <form id="settings-form">
+                            <!-- Same form fields as registration but pre-populated -->
+                            <div class="form-group">
+                                <label class="form-label" for="settingsUserName">Your Name</label>
+                                <input type="text" id="settingsUserName" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="settingsCalorieGoal">Daily Calorie Goal</label>
+                                <select id="settingsCalorieGoal" class="form-control">
+                                    <option value="1200">1200 kcal</option>
+                                    <option value="1400">1400 kcal</option>
+                                    <option value="1600">1600 kcal</option>
+                                    <option value="1700">1700 kcal</option>
+                                    <option value="1800">1800 kcal</option>
+                                    <option value="2000">2000 kcal</option>
+                                    <option value="2200">2200 kcal</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Dietary Type</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="settingsDietaryType" value="Vegetarian">
+                                        <span>Vegetarian</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="settingsDietaryType" value="Non-Vegetarian">
+                                        <span>Non-Vegetarian</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="settingsDietaryType" value="Mixed">
+                                        <span>Mixed</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="settingsProteinLevel">Protein Preference</label>
+                                <select id="settingsProteinLevel" class="form-control">
+                                    <option value="Standard">Standard</option>
+                                    <option value="High-Protein">High-Protein</option>
+                                    <option value="Very High-Protein">Very High-Protein</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="settingsCarbLevel">Carb Preference</label>
+                                <select id="settingsCarbLevel" class="form-control">
+                                    <option value="Very Low-Carb">Very Low-Carb</option>
+                                    <option value="Low-Carb">Low-Carb</option>
+                                    <option value="Moderate-Carb">Moderate-Carb</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Number of Recipes per Day</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="settingsMealCount" value="2">
+                                        <span>2 Meals</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="settingsMealCount" value="3">
+                                        <span>3 Meals</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="settings-actions">
+                                <button type="submit" class="btn btn--primary">Save Changes</button>
+                                <button type="button" class="btn btn--outline" id="reset-settings">Reset to Defaults</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Recipe Detail Modal -->
+    <div id="recipe-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-recipe-name"></h3>
+                <button class="modal-close" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="recipe-details">
+                    <div class="recipe-info">
+                        <span class="recipe-meta" id="modal-cuisine"></span>
+                        <span class="recipe-meta" id="modal-difficulty"></span>
+                        <span class="recipe-meta" id="modal-time"></span>
+                    </div>
+                    
+                    <div class="recipe-nutrition">
+                        <h4>Nutrition (per serving)</h4>
+                        <div class="nutrition-grid-modal">
+                            <div class="nutrition-item-modal">
+                                <span class="nutrition-label">Calories</span>
+                                <span class="nutrition-value" id="modal-calories"></span>
+                            </div>
+                            <div class="nutrition-item-modal">
+                                <span class="nutrition-label">Protein</span>
+                                <span class="nutrition-value" id="modal-protein"></span>
+                            </div>
+                            <div class="nutrition-item-modal">
+                                <span class="nutrition-label">Carbs</span>
+                                <span class="nutrition-value" id="modal-carbs"></span>
+                            </div>
+                            <div class="nutrition-item-modal">
+                                <span class="nutrition-label">Fat</span>
+                                <span class="nutrition-value" id="modal-fat"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-ingredients">
+                        <h4>Ingredients</h4>
+                        <ul id="modal-ingredients"></ul>
+                    </div>
+
+                    <div class="recipe-instructions">
+                        <h4>Instructions</h4>
+                        <ol id="modal-instructions"></ol>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--primary" id="add-to-shopping">Add to Shopping List</button>
+                <button class="btn btn--secondary" id="close-modal-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recipe Swap Modal -->
+    <div id="swap-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Choose Alternative Recipe</h3>
+                <button class="modal-close" id="close-swap-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="swap-options">
+                    <!-- Swap options will be generated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
