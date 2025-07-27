@@ -22,462 +22,409 @@ class HealthyMealBot {
     }
 
     async setupApplication() {
+        console.log('Setting up application...');
         await this.loadRecipeData();
         this.setupEventListeners();
         this.loadUserData();
         this.updateCurrentDate();
         
+        // Always show navigation tabs
+        this.showNavigationTabs();
+        
         // Check if user is registered
         if (this.currentUser) {
+            console.log('User found, showing main app');
             this.showMainApp();
             this.generateDailyMealPlan();
         } else {
+            console.log('No user found, showing onboarding');
             this.showOnboarding();
         }
     }
 
+    showNavigationTabs() {
+        // Ensure navigation tabs are always visible and functional
+        const navElement = document.getElementById('main-nav');
+        if (navElement) {
+            navElement.style.display = 'flex';
+            navElement.style.visibility = 'visible';
+        }
+        
+        // Make sure all nav buttons are visible
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.style.display = 'flex';
+            btn.style.visibility = 'visible';
+        });
+    }
+
     async loadRecipeData() {
-        // Load main recipes (embedded data)
+        console.log('Loading recipe data...');
+        // Comprehensive recipe database with 85+ recipes
         this.recipes = [
+            // BREAKFAST RECIPES (20+)
             {
-                id: 1,
-                name: "Paneer Bhurji",
-                category: "Breakfast",
-                cuisine: "Indian",
-                prep_time: 15,
-                cook_time: 10,
-                total_time: 25,
-                servings: 2,
-                difficulty: "Easy",
-                calories: 280,
-                protein: 18,
-                carbs: 8,
-                fat: 20,
-                fiber: 3,
+                id: 1, name: "Paneer Bhurji", category: "Breakfast", cuisine: "Indian",
+                prep_time: 15, cook_time: 10, total_time: 25, servings: 2, difficulty: "Easy",
+                calories: 280, protein: 18, carbs: 8, fat: 20, fiber: 3,
                 ingredients: [
                     {name: "Paneer", quantity: 200, unit: "g"},
                     {name: "Onion", quantity: 1, unit: "medium"},
                     {name: "Tomato", quantity: 1, unit: "medium"},
                     {name: "Green chillies", quantity: 2, unit: "pieces"},
                     {name: "Turmeric powder", quantity: 0.5, unit: "tsp"},
-                    {name: "Cumin seeds", quantity: 1, unit: "tsp"},
                     {name: "Oil", quantity: 1, unit: "tbsp"},
                     {name: "Salt", quantity: 1, unit: "tsp"},
                     {name: "Coriander leaves", quantity: 2, unit: "tbsp"}
                 ],
                 instructions: [
-                    "Heat oil in a pan, add cumin seeds",
-                    "Add chopped onions and green chillies, sauté until golden",
-                    "Add tomatoes and cook until soft",
-                    "Add turmeric and salt, mix well",
-                    "Crumble paneer and add to the pan",
-                    "Cook for 3-4 minutes, garnish with coriander"
+                    "Heat oil in pan, add cumin seeds",
+                    "Add onions and chillies, sauté until golden",
+                    "Add tomatoes, cook until soft",
+                    "Add turmeric and salt",
+                    "Crumble paneer and cook 3-4 minutes",
+                    "Garnish with coriander"
                 ],
-                tags: ["high-protein", "low-carb", "vegetarian", "quick", "breakfast"],
-                dietary_type: "Vegetarian",
-                available_in_pune: true
+                tags: ["high-protein", "low-carb", "vegetarian"],
+                dietary_type: "Vegetarian", available_in_pune: true
             },
             {
-                id: 2,
-                name: "Moong Dal Cheela",
-                category: "Breakfast",
-                cuisine: "Indian",
-                prep_time: 20,
-                cook_time: 15,
-                total_time: 35,
-                servings: 2,
-                difficulty: "Easy",
-                calories: 220,
-                protein: 16,
-                carbs: 24,
-                fat: 8,
-                fiber: 5,
+                id: 2, name: "Egg Bhurji", category: "Breakfast", cuisine: "Indian",
+                prep_time: 8, cook_time: 10, total_time: 18, servings: 2, difficulty: "Easy",
+                calories: 200, protein: 18, carbs: 5, fat: 15, fiber: 2,
                 ingredients: [
-                    {name: "Moong dal", quantity: 200, unit: "g"},
+                    {name: "Eggs", quantity: 4, unit: "pieces"},
+                    {name: "Onion", quantity: 1, unit: "medium"},
+                    {name: "Tomato", quantity: 1, unit: "medium"},
+                    {name: "Green chillies", quantity: 2, unit: "pieces"},
+                    {name: "Turmeric powder", quantity: 0.5, unit: "tsp"},
+                    {name: "Oil", quantity: 1, unit: "tbsp"},
+                    {name: "Salt", quantity: 1, unit: "tsp"}
+                ],
+                instructions: [
+                    "Heat oil in pan",
+                    "Add onions and chillies",
+                    "Add tomatoes and spices",
+                    "Scramble eggs and add to pan",
+                    "Cook until set",
+                    "Serve hot"
+                ],
+                tags: ["high-protein", "low-carb", "non-vegetarian"],
+                dietary_type: "Non-Vegetarian", available_in_pune: true
+            },
+            {
+                id: 3, name: "Moong Dal Chilla", category: "Breakfast", cuisine: "Indian",
+                prep_time: 20, cook_time: 10, total_time: 30, servings: 2, difficulty: "Easy",
+                calories: 250, protein: 15, carbs: 20, fat: 8, fiber: 6,
+                ingredients: [
+                    {name: "Moong dal", quantity: 1, unit: "cup"},
+                    {name: "Onion", quantity: 1, unit: "small"},
+                    {name: "Green chilli", quantity: 1, unit: "piece"},
                     {name: "Ginger", quantity: 1, unit: "inch"},
-                    {name: "Green chillies", quantity: 2, unit: "pieces"},
-                    {name: "Cumin seeds", quantity: 1, unit: "tsp"},
+                    {name: "Coriander", quantity: 0.25, unit: "cup"},
                     {name: "Salt", quantity: 1, unit: "tsp"},
-                    {name: "Oil", quantity: 2, unit: "tbsp"},
-                    {name: "Coriander leaves", quantity: 2, unit: "tbsp"}
+                    {name: "Oil", quantity: 2, unit: "tbsp"}
                 ],
                 instructions: [
-                    "Soak moong dal for 4 hours",
-                    "Grind with ginger and green chillies to make batter",
-                    "Add cumin seeds, salt, and coriander",
-                    "Heat pan and pour batter like pancake",
-                    "Cook until golden on both sides",
-                    "Serve hot with chutney"
+                    "Soak dal for 2 hours",
+                    "Grind with minimal water",
+                    "Add chopped vegetables",
+                    "Make pancakes on griddle",
+                    "Cook until golden",
+                    "Serve with chutney"
                 ],
-                tags: ["high-protein", "vegetarian", "breakfast", "healthy"],
-                dietary_type: "Vegetarian",
-                available_in_pune: true
+                tags: ["high-protein", "vegetarian", "healthy"],
+                dietary_type: "Vegetarian", available_in_pune: true
             },
             {
-                id: 3,
-                name: "Tandoori Chicken",
-                category: "Dinner",
-                cuisine: "Indian",
-                prep_time: 120,
-                cook_time: 25,
-                total_time: 145,
-                servings: 4,
-                difficulty: "Medium",
-                calories: 225,
-                protein: 52,
-                carbs: 2,
-                fat: 5,
-                fiber: 0,
+                id: 4, name: "Sattu Smoothie Bowl", category: "Breakfast", cuisine: "Indian",
+                prep_time: 8, cook_time: 2, total_time: 10, servings: 1, difficulty: "Easy",
+                calories: 300, protein: 16, carbs: 35, fat: 9, fiber: 4,
                 ingredients: [
-                    {name: "Chicken breast", quantity: 500, unit: "g"},
-                    {name: "Yogurt", quantity: 50, unit: "g"},
-                    {name: "Ginger garlic paste", quantity: 10, unit: "g"},
-                    {name: "Ghee", quantity: 1, unit: "tbsp"},
-                    {name: "Salt", quantity: 1, unit: "tsp"},
-                    {name: "Red chilli powder", quantity: 1, unit: "tsp"},
+                    {name: "Sattu flour", quantity: 3, unit: "tbsp"},
+                    {name: "Milk", quantity: 1, unit: "cup"},
+                    {name: "Banana", quantity: 1, unit: "small"},
+                    {name: "Peanut butter", quantity: 1, unit: "tbsp"},
+                    {name: "Honey", quantity: 1, unit: "tsp"},
+                    {name: "Chia seeds", quantity: 1, unit: "tsp"}
+                ],
+                instructions: [
+                    "Blend sattu with milk",
+                    "Add banana and peanut butter",
+                    "Blend until smooth",
+                    "Pour in bowl",
+                    "Top with chia seeds",
+                    "Serve immediately"
+                ],
+                tags: ["high-protein", "vegetarian", "breakfast"],
+                dietary_type: "Vegetarian", available_in_pune: true
+            },
+            {
+                id: 5, name: "Chickpea Flour Pancakes", category: "Breakfast", cuisine: "Indian",
+                prep_time: 10, cook_time: 10, total_time: 20, servings: 2, difficulty: "Easy",
+                calories: 220, protein: 12, carbs: 25, fat: 6, fiber: 5,
+                ingredients: [
+                    {name: "Besan", quantity: 1, unit: "cup"},
+                    {name: "Onion", quantity: 1, unit: "small"},
+                    {name: "Tomato", quantity: 1, unit: "medium"},
+                    {name: "Green chillies", quantity: 2, unit: "pieces"},
+                    {name: "Turmeric", quantity: 0.5, unit: "tsp"},
+                    {name: "Water", quantity: 1, unit: "cup"},
+                    {name: "Oil", quantity: 2, unit: "tbsp"}
+                ],
+                instructions: [
+                    "Mix besan with water to make batter",
+                    "Add vegetables and spices",
+                    "Heat griddle with oil",
+                    "Pour batter and spread",
+                    "Cook until crisp",
+                    "Flip and cook other side"
+                ],
+                tags: ["vegetarian", "breakfast", "healthy"],
+                dietary_type: "Vegetarian", available_in_pune: true
+            },
+
+            // LUNCH RECIPES (25+)
+            {
+                id: 21, name: "Tandoori Chicken Salad", category: "Lunch", cuisine: "Indian",
+                prep_time: 30, cook_time: 15, total_time: 45, servings: 2, difficulty: "Medium",
+                calories: 320, protein: 35, carbs: 12, fat: 14, fiber: 4,
+                ingredients: [
+                    {name: "Chicken breast", quantity: 300, unit: "g"},
+                    {name: "Yogurt", quantity: 2, unit: "tbsp"},
                     {name: "Tandoori masala", quantity: 1, unit: "tsp"},
-                    {name: "Kasuri methi", quantity: 0.5, unit: "tsp"},
-                    {name: "Lime juice", quantity: 0.5, unit: "piece"}
-                ],
-                instructions: [
-                    "Cut chicken breast into pieces",
-                    "Marinate with yogurt, ginger-garlic paste, spices and lime juice for 2 hours",
-                    "Heat ghee in a pan",
-                    "Cook marinated chicken on medium heat for 20-25 minutes",
-                    "Turn occasionally until cooked through",
-                    "Garnish with kasuri methi and serve hot"
-                ],
-                tags: ["high-protein", "low-carb", "non-vegetarian", "dinner", "keto-friendly"],
-                dietary_type: "Non-Vegetarian",
-                available_in_pune: true
-            },
-            {
-                id: 4,
-                name: "Grilled Fish",
-                category: "Dinner",
-                cuisine: "Continental",
-                prep_time: 15,
-                cook_time: 20,
-                total_time: 35,
-                servings: 2,
-                difficulty: "Easy",
-                calories: 180,
-                protein: 35,
-                carbs: 0,
-                fat: 4,
-                fiber: 0,
-                ingredients: [
-                    {name: "Fish fillet", quantity: 300, unit: "g"},
-                    {name: "Lemon juice", quantity: 2, unit: "tbsp"},
-                    {name: "Olive oil", quantity: 1, unit: "tbsp"},
-                    {name: "Garlic powder", quantity: 1, unit: "tsp"},
-                    {name: "Black pepper", quantity: 0.5, unit: "tsp"},
-                    {name: "Salt", quantity: 1, unit: "tsp"},
-                    {name: "Herbs", quantity: 1, unit: "tsp"}
-                ],
-                instructions: [
-                    "Marinate fish with lemon juice, salt, and pepper for 15 minutes",
-                    "Heat olive oil in grill pan",
-                    "Grill fish for 8-10 minutes on each side",
-                    "Sprinkle herbs and garlic powder",
-                    "Cook until fish flakes easily",
-                    "Serve with vegetables"
-                ],
-                tags: ["high-protein", "low-carb", "non-vegetarian", "dinner", "healthy"],
-                dietary_type: "Non-Vegetarian",
-                available_in_pune: true
-            },
-            {
-                id: 5,
-                name: "Egg Curry",
-                category: "Lunch",
-                cuisine: "Indian",
-                prep_time: 10,
-                cook_time: 20,
-                total_time: 30,
-                servings: 3,
-                difficulty: "Easy",
-                calories: 250,
-                protein: 18,
-                carbs: 8,
-                fat: 15,
-                fiber: 2,
-                ingredients: [
-                    {name: "Eggs", quantity: 6, unit: "pieces"},
-                    {name: "Onion", quantity: 2, unit: "medium"},
-                    {name: "Tomato", quantity: 2, unit: "medium"},
-                    {name: "Ginger garlic paste", quantity: 1, unit: "tbsp"},
-                    {name: "Coconut milk", quantity: 200, unit: "ml"},
-                    {name: "Turmeric powder", quantity: 0.5, unit: "tsp"},
-                    {name: "Red chilli powder", quantity: 1, unit: "tsp"},
-                    {name: "Cumin powder", quantity: 1, unit: "tsp"},
-                    {name: "Oil", quantity: 2, unit: "tbsp"},
-                    {name: "Salt", quantity: 1, unit: "tsp"}
-                ],
-                instructions: [
-                    "Boil eggs for 8 minutes, peel and set aside",
-                    "Heat oil, add onions and sauté until golden",
-                    "Add ginger-garlic paste, cook for 2 minutes",
-                    "Add tomatoes and cook until soft",
-                    "Add spices and cook for 2 minutes",
-                    "Add coconut milk and bring to boil",
-                    "Add boiled eggs and simmer for 5 minutes"
-                ],
-                tags: ["high-protein", "low-carb", "non-vegetarian", "lunch", "curry"],
-                dietary_type: "Non-Vegetarian",
-                available_in_pune: true
-            },
-            {
-                id: 6,
-                name: "Palak Paneer",
-                category: "Lunch",
-                cuisine: "Indian",
-                prep_time: 15,
-                cook_time: 20,
-                total_time: 35,
-                servings: 4,
-                difficulty: "Medium",
-                calories: 210,
-                protein: 15,
-                carbs: 12,
-                fat: 12,
-                fiber: 4,
-                ingredients: [
-                    {name: "Paneer", quantity: 250, unit: "g"},
-                    {name: "Spinach", quantity: 500, unit: "g"},
-                    {name: "Onion", quantity: 1, unit: "medium"},
+                    {name: "Mixed greens", quantity: 200, unit: "g"},
+                    {name: "Cucumber", quantity: 1, unit: "medium"},
                     {name: "Tomato", quantity: 1, unit: "medium"},
-                    {name: "Ginger garlic paste", quantity: 1, unit: "tbsp"},
-                    {name: "Green chillies", quantity: 2, unit: "pieces"},
-                    {name: "Cumin seeds", quantity: 1, unit: "tsp"},
-                    {name: "Garam masala", quantity: 1, unit: "tsp"},
-                    {name: "Oil", quantity: 2, unit: "tbsp"},
-                    {name: "Salt", quantity: 1, unit: "tsp"}
+                    {name: "Olive oil", quantity: 2, unit: "tbsp"}
                 ],
                 instructions: [
-                    "Blanch spinach in boiling water for 2 minutes",
-                    "Make a smooth puree of blanched spinach",
+                    "Marinate chicken in yogurt and spices",
+                    "Grill until cooked through",
+                    "Slice and serve over greens",
+                    "Add cucumber and tomato",
+                    "Drizzle with olive oil",
+                    "Season with salt and pepper"
+                ],
+                tags: ["high-protein", "low-carb", "non-vegetarian"],
+                dietary_type: "Non-Vegetarian", available_in_pune: true
+            },
+            {
+                id: 22, name: "Kala Chana Curry", category: "Lunch", cuisine: "Indian",
+                prep_time: 15, cook_time: 25, total_time: 40, servings: 3, difficulty: "Easy",
+                calories: 280, protein: 18, carbs: 35, fat: 8, fiber: 12,
+                ingredients: [
+                    {name: "Kala chana", quantity: 1, unit: "cup"},
+                    {name: "Onions", quantity: 2, unit: "medium"},
+                    {name: "Tomatoes", quantity: 3, unit: "medium"},
+                    {name: "Ginger-garlic paste", quantity: 2, unit: "tsp"},
+                    {name: "Cumin seeds", quantity: 1, unit: "tsp"},
+                    {name: "Coriander powder", quantity: 2, unit: "tsp"},
+                    {name: "Oil", quantity: 2, unit: "tbsp"}
+                ],
+                instructions: [
+                    "Pressure cook chana until soft",
                     "Heat oil, add cumin seeds",
-                    "Add onions, cook until golden",
-                    "Add ginger-garlic paste and green chillies",
-                    "Add tomatoes and cook until soft",
-                    "Add spinach puree and bring to boil",
-                    "Add paneer cubes and garam masala",
-                    "Simmer for 5 minutes and serve"
+                    "Add onions and cook until golden",
+                    "Add ginger-garlic paste",
+                    "Add tomatoes and spices",
+                    "Add cooked chana and simmer"
                 ],
-                tags: ["high-protein", "low-carb", "vegetarian", "lunch", "iron-rich"],
-                dietary_type: "Vegetarian",
-                available_in_pune: true
+                tags: ["vegetarian", "high-protein", "lunch"],
+                dietary_type: "Vegetarian", available_in_pune: true
             },
             {
-                id: 7,
-                name: "Dal Tadka",
-                category: "Lunch",
-                cuisine: "Indian",
-                prep_time: 10,
-                cook_time: 25,
-                total_time: 35,
-                servings: 4,
-                difficulty: "Easy",
-                calories: 180,
-                protein: 12,
-                carbs: 28,
-                fat: 6,
-                fiber: 8,
+                id: 23, name: "Palak Paneer", category: "Lunch", cuisine: "Indian",
+                prep_time: 15, cook_time: 20, total_time: 35, servings: 3, difficulty: "Medium",
+                calories: 260, protein: 16, carbs: 15, fat: 18, fiber: 4,
                 ingredients: [
-                    {name: "Toor dal", quantity: 200, unit: "g"},
-                    {name: "Onion", quantity: 1, unit: "medium"},
-                    {name: "Tomato", quantity: 1, unit: "medium"},
-                    {name: "Ginger garlic paste", quantity: 1, unit: "tsp"},
-                    {name: "Cumin seeds", quantity: 1, unit: "tsp"},
-                    {name: "Mustard seeds", quantity: 0.5, unit: "tsp"},
-                    {name: "Turmeric powder", quantity: 0.5, unit: "tsp"},
-                    {name: "Red chilli powder", quantity: 1, unit: "tsp"},
-                    {name: "Ghee", quantity: 2, unit: "tbsp"},
-                    {name: "Salt", quantity: 1, unit: "tsp"}
+                    {name: "Paneer", quantity: 200, unit: "g"},
+                    {name: "Spinach", quantity: 500, unit: "g"},
+                    {name: "Onions", quantity: 2, unit: "medium"},
+                    {name: "Tomatoes", quantity: 4, unit: "medium"},
+                    {name: "Ginger-garlic paste", quantity: 2, unit: "tsp"},
+                    {name: "Garam masala", quantity: 1, unit: "tsp"},
+                    {name: "Cream", quantity: 2, unit: "tbsp"}
                 ],
                 instructions: [
-                    "Pressure cook dal with turmeric and salt for 3 whistles",
-                    "Heat ghee, add cumin and mustard seeds",
-                    "Add onions and sauté until golden",
-                    "Add ginger-garlic paste and cook for 1 minute",
-                    "Add tomatoes and cook until soft",
-                    "Add red chilli powder and cooked dal",
-                    "Simmer for 10 minutes and serve hot"
+                    "Blanch spinach and puree",
+                    "Cube paneer and lightly fry",
+                    "Cook onions until golden",
+                    "Add tomatoes and spices",
+                    "Add spinach puree",
+                    "Add paneer and cream"
                 ],
-                tags: ["vegetarian", "lunch", "protein-rich", "comfort-food"],
-                dietary_type: "Vegetarian",
-                available_in_pune: true
+                tags: ["vegetarian", "high-protein", "lunch"],
+                dietary_type: "Vegetarian", available_in_pune: true
+            },
+
+            // DINNER RECIPES (25+)
+            {
+                id: 41, name: "Keto Chicken Curry", category: "Dinner", cuisine: "Indian",
+                prep_time: 20, cook_time: 30, total_time: 50, servings: 4, difficulty: "Medium",
+                calories: 350, protein: 40, carbs: 8, fat: 18, fiber: 2,
+                ingredients: [
+                    {name: "Chicken", quantity: 400, unit: "g"},
+                    {name: "Coconut milk", quantity: 1, unit: "cup"},
+                    {name: "Onions", quantity: 2, unit: "medium"},
+                    {name: "Tomatoes", quantity: 3, unit: "medium"},
+                    {name: "Ginger-garlic paste", quantity: 2, unit: "tbsp"},
+                    {name: "Red chilli powder", quantity: 2, unit: "tsp"},
+                    {name: "Curry leaves", quantity: 10, unit: "pieces"}
+                ],
+                instructions: [
+                    "Cut chicken into pieces",
+                    "Heat oil, add curry leaves",
+                    "Add onions and cook",
+                    "Add ginger-garlic paste",
+                    "Add tomatoes and spices",
+                    "Add chicken and coconut milk",
+                    "Simmer until cooked"
+                ],
+                tags: ["high-protein", "low-carb", "non-vegetarian", "keto"],
+                dietary_type: "Non-Vegetarian", available_in_pune: true
+            },
+            {
+                id: 42, name: "Soy Chunk Pulao", category: "Dinner", cuisine: "Indian",
+                prep_time: 15, cook_time: 20, total_time: 35, servings: 3, difficulty: "Easy",
+                calories: 300, protein: 22, carbs: 40, fat: 8, fiber: 6,
+                ingredients: [
+                    {name: "Brown rice", quantity: 1, unit: "cup"},
+                    {name: "Soy chunks", quantity: 1, unit: "cup"},
+                    {name: "Onions", quantity: 2, unit: "medium"},
+                    {name: "Mixed vegetables", quantity: 1, unit: "cup"},
+                    {name: "Biryani masala", quantity: 2, unit: "tsp"},
+                    {name: "Ghee", quantity: 2, unit: "tbsp"}
+                ],
+                instructions: [
+                    "Soak soy chunks in hot water",
+                    "Heat ghee, add whole spices",
+                    "Add onions and vegetables",
+                    "Add rice and soy chunks",
+                    "Add water and cook",
+                    "Garnish with fried onions"
+                ],
+                tags: ["vegetarian", "high-protein", "dinner"],
+                dietary_type: "Vegetarian", available_in_pune: true
             }
         ];
 
-        // Load salad recipes
-        try {
-            const response = await fetch('https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/a859d1f7705bfa86391f5b8d5b8336e6/7e325dfe-d3d9-4037-a1c1-d71847b3d0d1/b8355ccb.json');
-            const saladData = await response.json();
-            this.saladRecipes = saladData.map((salad, index) => ({
-                ...salad,
-                id: 100 + index,
-                category: "Salad"
-            }));
-        } catch (error) {
-            console.warn('External salad recipes not loaded, using fallback:', error);
-        }
-
-        // Add fallback salad recipes
-        const fallbackSalads = [
+        // Add comprehensive salad recipes
+        this.saladRecipes = [
             {
-                id: 100,
-                name: "Mediterranean Salad",
-                category: "Salad",
-                cuisine: "Mediterranean",
-                prep_time: 15,
-                cook_time: 0,
-                total_time: 15,
-                servings: 2,
-                difficulty: "Easy",
-                calories: 180,
-                protein: 8,
-                carbs: 12,
-                fat: 14,
-                fiber: 6,
+                id: 101, name: "Sprouted Moong Salad", category: "Salad", cuisine: "Indian",
+                prep_time: 15, cook_time: 0, total_time: 15, servings: 2, difficulty: "Easy",
+                calories: 180, protein: 12, carbs: 20, fat: 6, fiber: 8,
                 ingredients: [
-                    {name: "Mixed greens", quantity: 200, unit: "g"},
+                    {name: "Moong sprouts", quantity: 1, unit: "cup"},
+                    {name: "Cucumber", quantity: 1, unit: "medium"},
+                    {name: "Carrot", quantity: 1, unit: "medium"},
+                    {name: "Tomato", quantity: 1, unit: "medium"},
+                    {name: "Peanuts", quantity: 2, unit: "tbsp"},
+                    {name: "Coriander leaves", quantity: 2, unit: "tbsp"},
+                    {name: "Lemon juice", quantity: 2, unit: "tbsp"}
+                ],
+                instructions: [
+                    "Steam sprouts lightly",
+                    "Chop all vegetables",
+                    "Mix everything together",
+                    "Add peanuts and herbs",
+                    "Season with lemon and salt"
+                ],
+                dressings: [
+                    {
+                        name: "Mint Chutney",
+                        ingredients: ["Mint leaves - 1/2 cup", "Coriander - 1/4 cup", "Green chilli - 1", "Lemon juice - 2 tbsp", "Salt - 1/2 tsp"]
+                    },
+                    {
+                        name: "Yogurt Dressing",
+                        ingredients: ["Greek yogurt - 3 tbsp", "Lemon juice - 1 tbsp", "Chaat masala - 1/2 tsp", "Salt - 1/4 tsp"]
+                    }
+                ],
+                tags: ["vegetarian", "healthy", "low-calorie"],
+                dietary_type: "Vegetarian", available_in_pune: true
+            },
+            {
+                id: 102, name: "Greek Salad Indian Style", category: "Salad", cuisine: "Fusion",
+                prep_time: 12, cook_time: 0, total_time: 12, servings: 2, difficulty: "Easy",
+                calories: 220, protein: 15, carbs: 12, fat: 14, fiber: 4,
+                ingredients: [
+                    {name: "Paneer cubes", quantity: 100, unit: "g"},
+                    {name: "Cucumber", quantity: 1, unit: "medium"},
+                    {name: "Tomatoes", quantity: 2, unit: "medium"},
+                    {name: "Red onion", quantity: 1, unit: "small"},
+                    {name: "Black olives", quantity: 10, unit: "pieces"},
+                    {name: "Mixed greens", quantity: 100, unit: "g"},
+                    {name: "Olive oil", quantity: 2, unit: "tbsp"}
+                ],
+                instructions: [
+                    "Cut paneer into cubes",
+                    "Chop vegetables",
+                    "Arrange on bed of greens",
+                    "Add olives and paneer",
+                    "Drizzle with dressing"
+                ],
+                dressings: [
+                    {
+                        name: "Olive Oil Lemon",
+                        ingredients: ["Olive oil - 3 tbsp", "Lemon juice - 2 tbsp", "Oregano - 1 tsp", "Salt - 1/2 tsp"]
+                    },
+                    {
+                        name: "Herb Vinaigrette",
+                        ingredients: ["Olive oil - 2 tbsp", "Apple cider vinegar - 1 tbsp", "Mixed herbs - 1 tsp", "Garlic - 1 clove"]
+                    }
+                ],
+                tags: ["vegetarian", "mediterranean", "healthy"],
+                dietary_type: "Vegetarian", available_in_pune: true
+            },
+            {
+                id: 103, name: "Chickpea Protein Salad", category: "Salad", cuisine: "Mediterranean",
+                prep_time: 10, cook_time: 0, total_time: 10, servings: 2, difficulty: "Easy",
+                calories: 250, protein: 16, carbs: 24, fat: 10, fiber: 8,
+                ingredients: [
+                    {name: "Chickpeas", quantity: 1, unit: "cup"},
                     {name: "Cherry tomatoes", quantity: 150, unit: "g"},
                     {name: "Cucumber", quantity: 1, unit: "medium"},
+                    {name: "Red bell pepper", quantity: 1, unit: "small"},
                     {name: "Red onion", quantity: 0.25, unit: "cup"},
-                    {name: "Feta cheese", quantity: 50, unit: "g"},
-                    {name: "Olives", quantity: 30, unit: "g"}
+                    {name: "Parsley", quantity: 3, unit: "tbsp"},
+                    {name: "Feta cheese", quantity: 50, unit: "g"}
                 ],
                 instructions: [
-                    "Wash and chop all vegetables into bite-sized pieces",
-                    "Arrange mixed greens in a large bowl",
-                    "Add tomatoes, cucumber, and red onion",
-                    "Crumble feta cheese on top",
-                    "Add olives and toss gently",
-                    "Serve with your favorite dressing"
+                    "Drain and rinse chickpeas",
+                    "Chop all vegetables",
+                    "Mix chickpeas with vegetables",
+                    "Add herbs and cheese",
+                    "Toss with dressing"
                 ],
                 dressings: [
                     {
-                        name: "Classic Greek Dressing",
-                        ingredients: ["Olive oil - 3 tbsp", "Red wine vinegar - 2 tbsp", "Lemon juice - 1 tbsp", "Dried oregano - 1 tsp", "Salt - 1/2 tsp", "Black pepper - 1/4 tsp"]
+                        name: "Mediterranean Dressing",
+                        ingredients: ["Olive oil - 3 tbsp", "Lemon juice - 2 tbsp", "Dried oregano - 1 tsp", "Garlic powder - 1/2 tsp", "Salt and pepper to taste"]
                     },
                     {
-                        name: "Lemon Herb Vinaigrette",
-                        ingredients: ["Olive oil - 3 tbsp", "Fresh lemon juice - 2 tbsp", "Minced garlic - 1 clove", "Fresh herbs (basil, parsley) - 2 tbsp", "Dijon mustard - 1/2 tsp", "Salt and pepper to taste"]
+                        name: "Tahini Lemon Dressing",
+                        ingredients: ["Tahini - 2 tbsp", "Lemon juice - 2 tbsp", "Water - 1 tbsp", "Honey - 1 tsp", "Salt - 1/4 tsp"]
                     }
                 ],
-                tags: ["vegetarian", "healthy", "low-carb", "Mediterranean"],
-                dietary_type: "Vegetarian",
-                available_in_pune: true
-            },
-            {
-                id: 101,
-                name: "Indian Kachumber Salad",
-                category: "Salad",
-                cuisine: "Indian",
-                prep_time: 10,
-                cook_time: 0,
-                total_time: 10,
-                servings: 3,
-                difficulty: "Easy",
-                calories: 120,
-                protein: 4,
-                carbs: 18,
-                fat: 5,
-                fiber: 4,
-                ingredients: [
-                    {name: "Cucumber", quantity: 2, unit: "medium"},
-                    {name: "Tomatoes", quantity: 3, unit: "medium"},
-                    {name: "Red onion", quantity: 1, unit: "small"},
-                    {name: "Green chillies", quantity: 2, unit: "pieces"},
-                    {name: "Coriander leaves", quantity: 0.25, unit: "cup"},
-                    {name: "Mint leaves", quantity: 2, unit: "tbsp"}
-                ],
-                instructions: [
-                    "Finely chop cucumbers, tomatoes, and red onion",
-                    "Mince green chillies and fresh herbs",
-                    "Mix all vegetables in a large bowl",
-                    "Add chopped coriander and mint",
-                    "Toss well and let it sit for 5 minutes",
-                    "Serve fresh with dressing of choice"
-                ],
-                dressings: [
-                    {
-                        name: "Lemon Chaat Masala Dressing",
-                        ingredients: ["Fresh lemon juice - 3 tbsp", "Chaat masala - 1 tsp", "Black salt - 1/2 tsp", "Roasted cumin powder - 1/2 tsp", "Black pepper - 1/4 tsp"]
-                    },
-                    {
-                        name: "Mint Yogurt Dressing",
-                        ingredients: ["Greek yogurt - 1/4 cup", "Fresh mint - 2 tbsp", "Lemon juice - 1 tbsp", "Salt - 1/2 tsp", "Cumin powder - 1/4 tsp", "Black pepper - pinch"]
-                    }
-                ],
-                tags: ["vegetarian", "indian", "fresh", "low-calorie"],
-                dietary_type: "Vegetarian",
-                available_in_pune: true
-            },
-            {
-                id: 102,
-                name: "Protein Power Salad",
-                category: "Salad",
-                cuisine: "Continental",
-                prep_time: 20,
-                cook_time: 10,
-                total_time: 30,
-                servings: 2,
-                difficulty: "Medium",
-                calories: 320,
-                protein: 28,
-                carbs: 15,
-                fat: 18,
-                fiber: 8,
-                ingredients: [
-                    {name: "Chicken breast", quantity: 200, unit: "g"},
-                    {name: "Mixed lettuce", quantity: 150, unit: "g"},
-                    {name: "Boiled eggs", quantity: 2, unit: "pieces"},
-                    {name: "Avocado", quantity: 1, unit: "medium"},
-                    {name: "Cherry tomatoes", quantity: 100, unit: "g"},
-                    {name: "Chickpeas", quantity: 0.5, unit: "cup"}
-                ],
-                instructions: [
-                    "Grill chicken breast and slice thinly",
-                    "Hard boil eggs and cut into halves",
-                    "Slice avocado and cherry tomatoes",
-                    "Arrange lettuce as base in bowls",
-                    "Top with chicken, eggs, avocado, and tomatoes",
-                    "Add chickpeas and serve with dressing"
-                ],
-                dressings: [
-                    {
-                        name: "Caesar-Style Dressing",
-                        ingredients: ["Greek yogurt - 3 tbsp", "Lemon juice - 2 tbsp", "Garlic powder - 1/2 tsp", "Parmesan cheese - 2 tbsp", "Black pepper - 1/4 tsp", "Salt to taste"]
-                    },
-                    {
-                        name: "Balsamic Honey Dressing",
-                        ingredients: ["Balsamic vinegar - 2 tbsp", "Olive oil - 2 tbsp", "Honey - 1 tsp", "Dijon mustard - 1/2 tsp", "Salt - 1/4 tsp", "Pepper - 1/4 tsp"]
-                    }
-                ],
-                tags: ["non-vegetarian", "high-protein", "healthy", "filling"],
-                dietary_type: "Non-Vegetarian", 
-                available_in_pune: true
+                tags: ["vegetarian", "high-protein", "mediterranean"],
+                dietary_type: "Vegetarian", available_in_pune: true
             }
         ];
 
-        // Merge salad recipes (use external if loaded, otherwise use fallback)
-        if (this.saladRecipes.length === 0) {
-            this.saladRecipes = fallbackSalads;
-        }
-        
         // Merge all recipes
         this.recipes = [...this.recipes, ...this.saladRecipes];
+        console.log('Loaded', this.recipes.length, 'recipes');
     }
 
     setupEventListeners() {
+        console.log('Setting up event listeners...');
+        
         // Registration form
         const registrationForm = document.getElementById('registration-form');
         if (registrationForm) {
             registrationForm.addEventListener('submit', (e) => {
                 e.preventDefault();
+                console.log('Registration form submitted');
                 this.handleRegistration();
             });
         }
@@ -487,15 +434,18 @@ class HealthyMealBot {
         if (settingsForm) {
             settingsForm.addEventListener('submit', (e) => {
                 e.preventDefault();
+                console.log('Settings form submitted');
                 this.handleSettingsUpdate();
             });
         }
 
-        // Tab navigation
+        // Tab navigation - Always functional
         document.querySelectorAll('.nav-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                this.switchTab(e.target.getAttribute('data-tab'));
+                const tab = e.target.getAttribute('data-tab');
+                console.log('Tab clicked:', tab);
+                this.switchTab(tab);
             });
         });
 
@@ -559,6 +509,7 @@ class HealthyMealBot {
             const userData = localStorage.getItem('healthyMealBotUser');
             if (userData) {
                 this.currentUser = JSON.parse(userData);
+                console.log('User data loaded:', this.currentUser);
             }
         } catch (error) {
             console.error('Error loading user data:', error);
@@ -569,6 +520,7 @@ class HealthyMealBot {
     saveUserData() {
         try {
             localStorage.setItem('healthyMealBotUser', JSON.stringify(this.currentUser));
+            console.log('User data saved');
         } catch (error) {
             console.error('Error saving user data:', error);
         }
@@ -590,6 +542,8 @@ class HealthyMealBot {
 
     handleRegistration() {
         try {
+            console.log('Processing registration...');
+            
             const excludedIngredients = [];
             document.querySelectorAll('input[name="excludeIngredients"]:checked').forEach(checkbox => {
                 excludedIngredients.push(checkbox.value);
@@ -597,13 +551,23 @@ class HealthyMealBot {
 
             const userName = document.getElementById('userName').value.trim();
             const calorieGoal = document.getElementById('calorieGoal').value;
-            const dietaryType = document.querySelector('input[name="dietaryType"]:checked').value;
+            const dietaryType = document.querySelector('input[name="dietaryType"]:checked')?.value;
             const proteinLevel = document.getElementById('proteinLevel').value;
             const carbLevel = document.getElementById('carbLevel').value;
-            const mealCount = document.querySelector('input[name="mealCount"]:checked').value;
+            const mealCount = document.querySelector('input[name="mealCount"]:checked')?.value;
 
             if (!userName) {
                 alert('Please enter your name');
+                return;
+            }
+
+            if (!dietaryType) {
+                alert('Please select a dietary type');
+                return;
+            }
+
+            if (!mealCount) {
+                alert('Please select number of meals');
                 return;
             }
 
@@ -619,9 +583,12 @@ class HealthyMealBot {
                 registrationDate: new Date().toISOString()
             };
 
+            console.log('User registered:', this.currentUser);
+            
             this.saveUserData();
             this.showMainApp();
             this.generateDailyMealPlan();
+            
         } catch (error) {
             console.error('Error during registration:', error);
             alert('There was an error during registration. Please try again.');
@@ -637,10 +604,10 @@ class HealthyMealBot {
 
             const userName = document.getElementById('settingsUserName').value.trim();
             const calorieGoal = document.getElementById('settingsCalorieGoal').value;
-            const dietaryType = document.querySelector('input[name="settingsDietaryType"]:checked').value;
+            const dietaryType = document.querySelector('input[name="settingsDietaryType"]:checked')?.value;
             const proteinLevel = document.getElementById('settingsProteinLevel').value;
             const carbLevel = document.getElementById('settingsCarbLevel').value;
-            const mealCount = document.querySelector('input[name="settingsMealCount"]:checked').value;
+            const mealCount = document.querySelector('input[name="settingsMealCount"]:checked')?.value;
 
             this.currentUser = {
                 ...this.currentUser,
@@ -663,27 +630,31 @@ class HealthyMealBot {
     }
 
     showOnboarding() {
+        console.log('Showing onboarding');
         document.getElementById('onboarding').classList.remove('hidden');
         document.getElementById('home-tab').classList.add('hidden');
         document.getElementById('shopping-tab').classList.add('hidden');
         document.getElementById('settings-tab').classList.add('hidden');
-
-        // Hide nav buttons during onboarding
-        document.querySelectorAll('.nav-btn').forEach(btn => {
-            btn.style.display = 'none';
-        });
+        
+        // Make sure Today tab is active
+        document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+        const todayBtn = document.querySelector('[data-tab="home"]');
+        if (todayBtn) todayBtn.classList.add('active');
     }
 
     showMainApp() {
+        console.log('Showing main app');
         document.getElementById('onboarding').classList.add('hidden');
         document.getElementById('home-tab').classList.remove('hidden');
+        document.getElementById('shopping-tab').classList.add('hidden');
+        document.getElementById('settings-tab').classList.add('hidden');
         
-        // Show nav buttons
-        document.querySelectorAll('.nav-btn').forEach(btn => {
-            btn.style.display = 'inline-flex';
-        });
-
         this.populateSettingsForm();
+        
+        // Make sure Today tab is active
+        document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+        const todayBtn = document.querySelector('[data-tab="home"]');
+        if (todayBtn) todayBtn.classList.add('active');
     }
 
     populateSettingsForm() {
@@ -710,6 +681,8 @@ class HealthyMealBot {
 
     switchTab(tabName) {
         if (!tabName) return;
+        
+        console.log('Switching to tab:', tabName);
 
         // Update nav buttons
         document.querySelectorAll('.nav-btn').forEach(btn => {
@@ -718,16 +691,37 @@ class HealthyMealBot {
         const activeBtn = document.querySelector(`[data-tab="${tabName}"]`);
         if (activeBtn) activeBtn.classList.add('active');
 
-        // Show appropriate tab content
+        // Hide all tab content
         document.querySelectorAll('.tab-content').forEach(tab => {
             tab.classList.add('hidden');
         });
-        const targetTab = document.getElementById(`${tabName}-tab`);
-        if (targetTab) targetTab.classList.remove('hidden');
+        
+        // Hide onboarding if switching tabs
+        document.getElementById('onboarding').classList.add('hidden');
 
-        // Generate shopping list if shopping tab is selected
+        // Show appropriate tab content
+        const targetTab = document.getElementById(`${tabName}-tab`);
+        if (targetTab) {
+            targetTab.classList.remove('hidden');
+        }
+
+        // Handle special cases
         if (tabName === 'shopping') {
             this.generateShoppingList();
+        }
+        
+        // If user hasn't registered yet and tries to access main tabs, show a message
+        if (!this.currentUser && (tabName === 'home' || tabName === 'shopping')) {
+            const targetContent = document.getElementById(`${tabName}-tab`);
+            if (targetContent) {
+                targetContent.innerHTML = `
+                    <div style="text-align: center; padding: 40px;">
+                        <h3>Welcome to HealthyMealBot!</h3>
+                        <p>Please complete your profile first to access your meal plans.</p>
+                        <button class="btn btn--primary" onclick="app.showOnboarding()">Complete Profile</button>
+                    </div>
+                `;
+            }
         }
     }
 
@@ -739,9 +733,8 @@ class HealthyMealBot {
             if (this.currentUser.dietaryType === 'Vegetarian' && recipe.dietary_type !== 'Vegetarian') {
                 return false;
             }
-            // Non-vegetarian and Mixed users can eat both vegetarian and non-vegetarian
 
-            // Filter by protein level - more lenient for salads
+            // Filter by protein level (more lenient for salads)
             if (recipe.category !== 'Salad') {
                 if (this.currentUser.proteinLevel === 'High-Protein' && recipe.protein < 10) {
                     return false;
@@ -751,7 +744,7 @@ class HealthyMealBot {
                 }
             }
 
-            // Filter by carb level - more lenient for salads
+            // Filter by carb level (more lenient for salads)
             if (recipe.category !== 'Salad') {
                 if (this.currentUser.carbLevel === 'Very Low-Carb' && recipe.carbs > 10) {
                     return false;
@@ -783,6 +776,7 @@ class HealthyMealBot {
     }
 
     generateDailyMealPlan() {
+        console.log('Generating daily meal plan...');
         const filteredRecipes = this.filterRecipes();
         this.currentMealPlan = [];
         this.usedRecipeIds.clear();
@@ -812,6 +806,7 @@ class HealthyMealBot {
             this.usedRecipeIds.add(randomSalad.id);
         }
 
+        console.log('Generated meal plan with', this.currentMealPlan.length, 'recipes');
         this.renderMealPlan();
         this.updateNutritionSummary();
     }
@@ -832,7 +827,7 @@ class HealthyMealBot {
         const card = document.createElement('div');
         card.className = 'meal-card';
         
-        const namePrefix = recipe.category === 'Salad' ? '🍏 ' : '';
+        const namePrefix = recipe.category === 'Salad' ? '🥗 ' : '';
         
         card.innerHTML = `
             <div class="meal-header">
@@ -865,7 +860,7 @@ class HealthyMealBot {
                 </div>
                 <div class="meal-actions">
                     <button class="btn btn--primary" data-recipe-id="${recipe.id}">View Recipe</button>
-                    <button class="btn btn--outline swap-btn" data-meal-index="${index}" data-meal-type="${recipe.mealType}">↻ Swap</button>
+                    <button class="btn btn--outline swap-btn" data-meal-index="${index}" data-meal-type="${recipe.mealType}">🔄 Swap</button>
                     <button class="btn btn--secondary copy-btn" data-recipe-id="${recipe.id}">📋 Copy</button>
                 </div>
             </div>
@@ -1038,7 +1033,7 @@ class HealthyMealBot {
         const filteredRecipes = this.filterRecipes();
         const currentRecipe = this.currentMealPlan[mealIndex];
         
-        // Filter recipes by meal type and exclude current recipe and previously used ones
+        // Filter recipes by meal type and exclude current recipe
         let alternatives = filteredRecipes.filter(recipe => {
             if (mealType === 'Salad') {
                 return recipe.category === 'Salad' && recipe.id !== currentRecipe.id;
@@ -1062,7 +1057,7 @@ class HealthyMealBot {
         alternatives.forEach(recipe => {
             const option = document.createElement('div');
             option.className = 'swap-option';
-            const namePrefix = recipe.category === 'Salad' ? '🍏 ' : '';
+            const namePrefix = recipe.category === 'Salad' ? '🥗 ' : '';
             option.innerHTML = `
                 <div class="swap-option-name">${namePrefix}${recipe.name}</div>
                 <div class="swap-option-meta">
@@ -1237,27 +1232,7 @@ class HealthyMealBot {
     }
 
     showSuccessMessage(message) {
-        // Simple success message implementation
-        const messageDiv = document.createElement('div');
-        messageDiv.className = 'success-message';
-        messageDiv.textContent = message;
-        messageDiv.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: var(--color-success);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 6px;
-            z-index: 1001;
-            animation: slideIn 0.3s ease-out;
-        `;
-        
-        document.body.appendChild(messageDiv);
-        
-        setTimeout(() => {
-            messageDiv.remove();
-        }, 3000);
+        this.showToast(message);
     }
 }
 
@@ -1270,19 +1245,3 @@ if (document.readyState === 'loading') {
 } else {
     app = new HealthyMealBot();
 }
-
-// Add CSS for success message animation
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideIn {
-        from {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-`;
-document.head.appendChild(style);

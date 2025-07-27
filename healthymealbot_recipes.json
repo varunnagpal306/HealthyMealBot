@@ -1,0 +1,1063 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Paneer Bhurji",
+      "category": "Breakfast",
+      "cuisine": "Indian",
+      "prep_time": 15,
+      "cook_time": 10,
+      "total_time": 25,
+      "servings": 2,
+      "difficulty": "Easy",
+      "calories": 280,
+      "protein": 18,
+      "carbs": 8,
+      "fat": 20,
+      "fiber": 3,
+      "ingredients": [
+        {
+          "name": "Paneer",
+          "quantity": 200,
+          "unit": "g"
+        },
+        {
+          "name": "Onion",
+          "quantity": 1,
+          "unit": "medium"
+        },
+        {
+          "name": "Tomato",
+          "quantity": 1,
+          "unit": "medium"
+        },
+        {
+          "name": "Green chillies",
+          "quantity": 2,
+          "unit": "pieces"
+        },
+        {
+          "name": "Turmeric powder",
+          "quantity": 0.5,
+          "unit": "tsp"
+        },
+        {
+          "name": "Oil",
+          "quantity": 1,
+          "unit": "tbsp"
+        }
+      ],
+      "instructions": [
+        "Heat oil in a pan, add cumin seeds",
+        "Add chopped onions and green chillies, saut\u00e9 until golden",
+        "Add tomatoes and cook until soft",
+        "Crumble paneer and add to the pan",
+        "Cook for 3-4 minutes, garnish with coriander"
+      ],
+      "tags": [
+        "high-protein",
+        "low-carb",
+        "vegetarian",
+        "breakfast"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "BigBasket",
+        "Local vendors"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Egg Bhurji",
+      "category": "Breakfast",
+      "cuisine": "Indian",
+      "prep_time": 10,
+      "cook_time": 8,
+      "total_time": 18,
+      "servings": 2,
+      "difficulty": "Easy",
+      "calories": 200,
+      "protein": 18,
+      "carbs": 5,
+      "fat": 15,
+      "fiber": 2,
+      "ingredients": [
+        {
+          "name": "Eggs",
+          "quantity": 4,
+          "unit": "pieces"
+        },
+        {
+          "name": "Onion",
+          "quantity": 1,
+          "unit": "medium"
+        },
+        {
+          "name": "Tomato",
+          "quantity": 1,
+          "unit": "medium"
+        },
+        {
+          "name": "Green chillies",
+          "quantity": 2,
+          "unit": "pieces"
+        }
+      ],
+      "instructions": [
+        "Beat eggs in a bowl with salt",
+        "Heat oil in pan, add onions and green chillies",
+        "Add tomatoes and turmeric, cook until soft",
+        "Pour beaten eggs and scramble gently"
+      ],
+      "tags": [
+        "high-protein",
+        "low-carb",
+        "non-vegetarian",
+        "breakfast"
+      ],
+      "dietary_type": "Non-Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "BigBasket",
+        "Local vendors"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Moong Dal Chilla",
+      "category": "Breakfast",
+      "cuisine": "Indian",
+      "prep_time": 120,
+      "cook_time": 15,
+      "total_time": 135,
+      "servings": 2,
+      "difficulty": "Medium",
+      "calories": 310,
+      "protein": 22,
+      "carbs": 35,
+      "fat": 8,
+      "fiber": 8,
+      "ingredients": [
+        {
+          "name": "Moong dal",
+          "quantity": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "Ginger",
+          "quantity": 1,
+          "unit": "inch"
+        },
+        {
+          "name": "Green chillies",
+          "quantity": 2,
+          "unit": "pieces"
+        }
+      ],
+      "instructions": [
+        "Soak moong dal for 2 hours",
+        "Grind dal with ginger, green chillies, and salt",
+        "Add chopped onions and coriander to batter",
+        "Heat pan and spread batter like pancake"
+      ],
+      "tags": [
+        "high-protein",
+        "vegetarian",
+        "healthy",
+        "breakfast"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "BigBasket",
+        "Local vendors"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Protein Omelette",
+      "category": "Breakfast",
+      "cuisine": "Indian",
+      "prep_time": 5,
+      "cook_time": 8,
+      "total_time": 13,
+      "servings": 1,
+      "difficulty": "Easy",
+      "calories": 320,
+      "protein": 25,
+      "carbs": 4,
+      "fat": 22,
+      "fiber": 1,
+      "ingredients": [
+        {
+          "name": "Eggs",
+          "quantity": 3,
+          "unit": "pieces"
+        },
+        {
+          "name": "Paneer",
+          "quantity": 50,
+          "unit": "g"
+        },
+        {
+          "name": "Spinach",
+          "quantity": 0.5,
+          "unit": "cup"
+        }
+      ],
+      "instructions": [
+        "Beat eggs with salt",
+        "Add crumbled paneer and chopped vegetables",
+        "Heat oil in pan",
+        "Pour mixture and cook like omelette"
+      ],
+      "tags": [
+        "high-protein",
+        "low-carb",
+        "vegetarian",
+        "breakfast"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "BigBasket",
+        "Local vendors"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Besan Chilla",
+      "category": "Breakfast",
+      "cuisine": "Indian",
+      "prep_time": 10,
+      "cook_time": 12,
+      "total_time": 22,
+      "servings": 2,
+      "difficulty": "Easy",
+      "calories": 275,
+      "protein": 16,
+      "carbs": 28,
+      "fat": 10,
+      "fiber": 6,
+      "ingredients": [
+        {
+          "name": "Besan (Gram flour)",
+          "quantity": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "Water",
+          "quantity": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "Onion",
+          "quantity": 1,
+          "unit": "small"
+        }
+      ],
+      "instructions": [
+        "Mix besan with water to make batter",
+        "Add vegetables and spices to batter",
+        "Heat pan and spread batter",
+        "Cook until golden on both sides"
+      ],
+      "tags": [
+        "high-protein",
+        "vegetarian",
+        "gluten-free",
+        "breakfast"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "BigBasket",
+        "Local vendors"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Sattu Smoothie Bowl",
+      "category": "Breakfast",
+      "cuisine": "Indian",
+      "prep_time": 10,
+      "cook_time": 0,
+      "total_time": 10,
+      "servings": 1,
+      "difficulty": "Easy",
+      "calories": 285,
+      "protein": 17,
+      "carbs": 22,
+      "fat": 15,
+      "fiber": 8,
+      "ingredients": [
+        {
+          "name": "Sattu flour",
+          "quantity": 3,
+          "unit": "tbsp"
+        },
+        {
+          "name": "Milk",
+          "quantity": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "Banana",
+          "quantity": 0.5,
+          "unit": "piece"
+        }
+      ],
+      "instructions": [
+        "Blend sattu flour with milk until smooth",
+        "Add banana and peanut butter, blend again",
+        "Pour into bowl",
+        "Top with chia seeds and chopped almonds"
+      ],
+      "tags": [
+        "high-protein",
+        "vegetarian",
+        "smoothie",
+        "breakfast"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "BigBasket",
+        "Local vendors"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Tandoori Chicken Salad",
+      "category": "Lunch",
+      "cuisine": "Indian",
+      "prep_time": 120,
+      "cook_time": 25,
+      "total_time": 145,
+      "servings": 2,
+      "difficulty": "Medium",
+      "calories": 350,
+      "protein": 32,
+      "carbs": 12,
+      "fat": 18,
+      "fiber": 4,
+      "ingredients": [
+        {
+          "name": "Chicken breast",
+          "quantity": 300,
+          "unit": "g"
+        },
+        {
+          "name": "Greek yogurt",
+          "quantity": 0.5,
+          "unit": "cup"
+        },
+        {
+          "name": "Tandoori masala",
+          "quantity": 2,
+          "unit": "tbsp"
+        }
+      ],
+      "instructions": [
+        "Marinate chicken in yogurt and tandoori masala for 2 hours",
+        "Grill chicken until cooked through",
+        "Slice chicken and let cool",
+        "Mix vegetables and mint leaves"
+      ],
+      "tags": [
+        "high-protein",
+        "low-carb",
+        "non-vegetarian",
+        "lunch"
+      ],
+      "dietary_type": "Non-Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "BigBasket",
+        "Local vendors"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Paneer Tikka Masala",
+      "category": "Lunch",
+      "cuisine": "Indian",
+      "prep_time": 30,
+      "cook_time": 25,
+      "total_time": 55,
+      "servings": 3,
+      "difficulty": "Medium",
+      "calories": 380,
+      "protein": 24,
+      "carbs": 15,
+      "fat": 26,
+      "fiber": 5,
+      "ingredients": [
+        {
+          "name": "Paneer",
+          "quantity": 300,
+          "unit": "g"
+        },
+        {
+          "name": "Tomatoes",
+          "quantity": 4,
+          "unit": "medium"
+        },
+        {
+          "name": "Onion",
+          "quantity": 2,
+          "unit": "medium"
+        }
+      ],
+      "instructions": [
+        "Cut paneer into cubes and lightly fry",
+        "Make gravy with tomatoes, onions, and cashews",
+        "Blend gravy until smooth",
+        "Add paneer and cream, simmer for 5 minutes"
+      ],
+      "tags": [
+        "high-protein",
+        "vegetarian",
+        "creamy",
+        "lunch"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "BigBasket",
+        "Local vendors"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Chana Masala Bowl",
+      "category": "Lunch",
+      "cuisine": "Indian",
+      "prep_time": 15,
+      "cook_time": 30,
+      "total_time": 45,
+      "servings": 2,
+      "difficulty": "Medium",
+      "calories": 320,
+      "protein": 18,
+      "carbs": 35,
+      "fat": 12,
+      "fiber": 12,
+      "ingredients": [
+        {
+          "name": "Chickpeas",
+          "quantity": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "Cauliflower",
+          "quantity": 1,
+          "unit": "small head"
+        },
+        {
+          "name": "Tomatoes",
+          "quantity": 2,
+          "unit": "medium"
+        }
+      ],
+      "instructions": [
+        "Soak chickpeas overnight and boil until tender",
+        "Grate cauliflower to make rice-like texture",
+        "Make masala gravy with onions, tomatoes, and spices",
+        "Add cooked chickpeas to gravy"
+      ],
+      "tags": [
+        "high-protein",
+        "vegetarian",
+        "fiber-rich",
+        "lunch"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "BigBasket",
+        "Local vendors"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Fish Curry with Vegetables",
+      "category": "Lunch",
+      "cuisine": "Indian",
+      "prep_time": 20,
+      "cook_time": 30,
+      "total_time": 50,
+      "servings": 3,
+      "difficulty": "Medium",
+      "calories": 285,
+      "protein": 28,
+      "carbs": 12,
+      "fat": 15,
+      "fiber": 4,
+      "ingredients": [
+        {
+          "name": "Fish (Rohu/Pomfret)",
+          "quantity": 400,
+          "unit": "g"
+        },
+        {
+          "name": "Coconut milk",
+          "quantity": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "Okra",
+          "quantity": 150,
+          "unit": "g"
+        }
+      ],
+      "instructions": [
+        "Clean and cut fish into pieces",
+        "Marinate fish with turmeric and salt",
+        "Heat oil, add curry leaves and spices",
+        "Add vegetables and cook partially"
+      ],
+      "tags": [
+        "high-protein",
+        "low-carb",
+        "non-vegetarian",
+        "lunch"
+      ],
+      "dietary_type": "Non-Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "Local fish markets"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Soya Chunk Curry",
+      "category": "Lunch",
+      "cuisine": "Indian",
+      "prep_time": 20,
+      "cook_time": 25,
+      "total_time": 45,
+      "servings": 3,
+      "difficulty": "Medium",
+      "calories": 310,
+      "protein": 26,
+      "carbs": 18,
+      "fat": 14,
+      "fiber": 8,
+      "ingredients": [
+        {
+          "name": "Soya chunks",
+          "quantity": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "Onions",
+          "quantity": 2,
+          "unit": "medium"
+        },
+        {
+          "name": "Tomatoes",
+          "quantity": 2,
+          "unit": "medium"
+        }
+      ],
+      "instructions": [
+        "Soak soya chunks in hot water for 15 minutes",
+        "Squeeze out water and set aside",
+        "Make masala gravy with onions and tomatoes",
+        "Add soya chunks and spices"
+      ],
+      "tags": [
+        "high-protein",
+        "vegetarian",
+        "soy-based",
+        "lunch"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "BigBasket",
+        "Local vendors"
+      ]
+    },
+    {
+      "id": 51,
+      "name": "Keto Butter Chicken",
+      "category": "Dinner",
+      "cuisine": "Indian",
+      "prep_time": 60,
+      "cook_time": 30,
+      "total_time": 90,
+      "servings": 4,
+      "difficulty": "Medium",
+      "calories": 385,
+      "protein": 30,
+      "carbs": 8,
+      "fat": 26,
+      "fiber": 2,
+      "ingredients": [
+        {
+          "name": "Chicken thighs",
+          "quantity": 500,
+          "unit": "g"
+        },
+        {
+          "name": "Heavy cream",
+          "quantity": 0.5,
+          "unit": "cup"
+        },
+        {
+          "name": "Butter",
+          "quantity": 3,
+          "unit": "tbsp"
+        }
+      ],
+      "instructions": [
+        "Marinate chicken in yogurt and spices for 1 hour",
+        "Cook chicken pieces until done",
+        "Make gravy with onions, tomato puree, and spices",
+        "Add cooked chicken to gravy"
+      ],
+      "tags": [
+        "high-protein",
+        "low-carb",
+        "non-vegetarian",
+        "dinner"
+      ],
+      "dietary_type": "Non-Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "BigBasket",
+        "Local vendors"
+      ]
+    },
+    {
+      "id": 52,
+      "name": "Paneer Makhani",
+      "category": "Dinner",
+      "cuisine": "Indian",
+      "prep_time": 20,
+      "cook_time": 25,
+      "total_time": 45,
+      "servings": 3,
+      "difficulty": "Medium",
+      "calories": 360,
+      "protein": 18,
+      "carbs": 12,
+      "fat": 28,
+      "fiber": 3,
+      "ingredients": [
+        {
+          "name": "Paneer",
+          "quantity": 300,
+          "unit": "g"
+        },
+        {
+          "name": "Tomatoes",
+          "quantity": 4,
+          "unit": "medium"
+        },
+        {
+          "name": "Cashews",
+          "quantity": 12,
+          "unit": "pieces"
+        }
+      ],
+      "instructions": [
+        "Roast tomatoes, onions, and cashews",
+        "Blend to smooth puree",
+        "Cook puree with spices and butter",
+        "Add paneer cubes gently"
+      ],
+      "tags": [
+        "high-protein",
+        "vegetarian",
+        "creamy",
+        "dinner"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "BigBasket",
+        "Local vendors"
+      ]
+    },
+    {
+      "id": 53,
+      "name": "Grilled Fish with Vegetables",
+      "category": "Dinner",
+      "cuisine": "Indian",
+      "prep_time": 30,
+      "cook_time": 20,
+      "total_time": 50,
+      "servings": 2,
+      "difficulty": "Medium",
+      "calories": 290,
+      "protein": 32,
+      "carbs": 8,
+      "fat": 14,
+      "fiber": 4,
+      "ingredients": [
+        {
+          "name": "Fish fillets",
+          "quantity": 300,
+          "unit": "g"
+        },
+        {
+          "name": "Broccoli",
+          "quantity": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "Bell peppers",
+          "quantity": 1,
+          "unit": "cup"
+        }
+      ],
+      "instructions": [
+        "Marinate fish with lemon juice and spices",
+        "Cut vegetables into uniform pieces",
+        "Grill fish until cooked through",
+        "Saut\u00e9 vegetables until tender-crisp"
+      ],
+      "tags": [
+        "high-protein",
+        "low-carb",
+        "non-vegetarian",
+        "dinner"
+      ],
+      "dietary_type": "Non-Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "Local fish markets"
+      ]
+    },
+    {
+      "id": 71,
+      "name": "\ud83e\udd57 Protein Power Sprouts Salad",
+      "category": "Salad",
+      "cuisine": "Indian",
+      "prep_time": 15,
+      "cook_time": 0,
+      "total_time": 15,
+      "servings": 1,
+      "difficulty": "Easy",
+      "calories": 271,
+      "protein": 15.2,
+      "carbs": 26.1,
+      "fat": 9.3,
+      "fiber": 11.3,
+      "ingredients": [
+        {
+          "name": "Mixed sprouts",
+          "quantity": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "Paneer cubes",
+          "quantity": 50,
+          "unit": "g"
+        },
+        {
+          "name": "Cucumber",
+          "quantity": 0.5,
+          "unit": "cup"
+        }
+      ],
+      "instructions": [
+        "Wash and drain mixed sprouts",
+        "Dice all vegetables into small pieces",
+        "Mix sprouts, paneer, and vegetables",
+        "Choose your preferred dressing"
+      ],
+      "tags": [
+        "high-protein",
+        "vegetarian",
+        "raw",
+        "salad"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "BigBasket",
+        "Local vendors"
+      ],
+      "dressings": [
+        {
+          "name": "Mint-Coriander Chutney",
+          "ingredients": [
+            "Fresh mint - 1/4 cup",
+            "Coriander - 1/4 cup",
+            "Green chillies - 2",
+            "Lemon juice - 2 tbsp"
+          ],
+          "method": "Blend all ingredients until smooth"
+        },
+        {
+          "name": "Yogurt-Cumin Dressing",
+          "ingredients": [
+            "Greek yogurt - 3 tbsp",
+            "Cumin powder - 1/2 tsp",
+            "Chaat masala - 1/2 tsp"
+          ],
+          "method": "Mix all ingredients until smooth"
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "name": "\ud83e\udd57 Chickpea Protein Salad",
+      "category": "Salad",
+      "cuisine": "Indian",
+      "prep_time": 10,
+      "cook_time": 0,
+      "total_time": 10,
+      "servings": 1,
+      "difficulty": "Easy",
+      "calories": 285,
+      "protein": 14,
+      "carbs": 32,
+      "fat": 10,
+      "fiber": 12,
+      "ingredients": [
+        {
+          "name": "Boiled chickpeas",
+          "quantity": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "Cucumber",
+          "quantity": 1,
+          "unit": "medium"
+        },
+        {
+          "name": "Tomatoes",
+          "quantity": 1,
+          "unit": "medium"
+        }
+      ],
+      "instructions": [
+        "Combine chickpeas with chopped vegetables",
+        "Season with lemon juice and spices",
+        "Drizzle with olive oil",
+        "Toss well and serve fresh"
+      ],
+      "tags": [
+        "high-protein",
+        "vegetarian",
+        "fiber-rich",
+        "salad"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "BigBasket",
+        "Local vendors"
+      ],
+      "dressings": [
+        {
+          "name": "Tangy Tamarind Dressing",
+          "ingredients": [
+            "Tamarind paste - 1 tbsp",
+            "Jaggery - 1 tsp",
+            "Cumin powder - 1/2 tsp"
+          ],
+          "method": "Mix all ingredients until smooth"
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "name": "\ud83e\udd57 Paneer Tikka Caesar Salad",
+      "category": "Salad",
+      "cuisine": "Indian",
+      "prep_time": 20,
+      "cook_time": 15,
+      "total_time": 35,
+      "servings": 1,
+      "difficulty": "Medium",
+      "calories": 290,
+      "protein": 20,
+      "carbs": 15,
+      "fat": 18,
+      "fiber": 6,
+      "ingredients": [
+        {
+          "name": "Paneer",
+          "quantity": 100,
+          "unit": "g"
+        },
+        {
+          "name": "Romaine lettuce",
+          "quantity": 2,
+          "unit": "cups"
+        },
+        {
+          "name": "Cherry tomatoes",
+          "quantity": 0.5,
+          "unit": "cup"
+        }
+      ],
+      "instructions": [
+        "Marinate paneer in tikka spices",
+        "Grill paneer until golden",
+        "Prepare caesar dressing with yogurt base",
+        "Toss lettuce with dressing and top with paneer"
+      ],
+      "tags": [
+        "high-protein",
+        "vegetarian",
+        "grilled",
+        "salad"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "BigBasket",
+        "Local vendors"
+      ],
+      "dressings": [
+        {
+          "name": "Indian Caesar Dressing",
+          "ingredients": [
+            "Greek yogurt - 3 tbsp",
+            "Lemon juice - 1 tbsp",
+            "Garlic - 1 clove",
+            "Parmesan - 1 tbsp"
+          ],
+          "method": "Whisk all ingredients until smooth"
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "name": "Roasted Chickpeas",
+      "category": "Snack",
+      "cuisine": "Indian",
+      "prep_time": 10,
+      "cook_time": 25,
+      "total_time": 35,
+      "servings": 4,
+      "difficulty": "Easy",
+      "calories": 180,
+      "protein": 12,
+      "carbs": 25,
+      "fat": 4,
+      "fiber": 8,
+      "ingredients": [
+        {
+          "name": "Boiled chickpeas",
+          "quantity": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "Olive oil",
+          "quantity": 1,
+          "unit": "tbsp"
+        },
+        {
+          "name": "Chaat masala",
+          "quantity": 0.5,
+          "unit": "tsp"
+        }
+      ],
+      "instructions": [
+        "Preheat oven to 200\u00b0C",
+        "Toss chickpeas with oil and spices",
+        "Spread on baking sheet",
+        "Roast for 20-25 minutes until crispy"
+      ],
+      "tags": [
+        "high-protein",
+        "vegetarian",
+        "crunchy",
+        "snack"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "BigBasket",
+        "Local vendors"
+      ]
+    },
+    {
+      "id": 82,
+      "name": "Paneer Tikka Bites",
+      "category": "Snack",
+      "cuisine": "Indian",
+      "prep_time": 30,
+      "cook_time": 15,
+      "total_time": 45,
+      "servings": 4,
+      "difficulty": "Medium",
+      "calories": 200,
+      "protein": 15,
+      "carbs": 8,
+      "fat": 12,
+      "fiber": 2,
+      "ingredients": [
+        {
+          "name": "Paneer",
+          "quantity": 200,
+          "unit": "g"
+        },
+        {
+          "name": "Greek yogurt",
+          "quantity": 2,
+          "unit": "tbsp"
+        },
+        {
+          "name": "Tikka masala",
+          "quantity": 1,
+          "unit": "tbsp"
+        }
+      ],
+      "instructions": [
+        "Cut paneer into small cubes",
+        "Marinate in yogurt and spices for 30 minutes",
+        "Thread onto skewers",
+        "Grill until golden brown"
+      ],
+      "tags": [
+        "high-protein",
+        "vegetarian",
+        "grilled",
+        "snack"
+      ],
+      "dietary_type": "Vegetarian",
+      "available_in_pune": true,
+      "pune_markets": [
+        "Market Yard",
+        "BigBasket",
+        "Local vendors"
+      ]
+    }
+  ],
+  "total_count": 85,
+  "categories": {
+    "Breakfast": 20,
+    "Lunch": 25,
+    "Dinner": 20,
+    "Salad": 12,
+    "Snack": 8
+  }
+}
